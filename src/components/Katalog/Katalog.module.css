@@ -1,0 +1,22 @@
+.main{
+	margin: 5vw 7vw 0 5vw;
+}
+.header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.sort_popup{
+	font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1vw;
+color: #444444;
+position: absolute;
+}
+li{
+line-height: 1;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
