@@ -6,7 +6,28 @@ import ava from '../assets/ава.jpg'
 import top40 from '../assets/top40.png'
 import oreon680 from '../assets/oreon680.png'
 import emaux from '../assets/emaux.png'
+import products from '../../redux/products'
+import {Link} from 'react-router-dom';
 
+
+const ProductOne=(props)=>{
+	let path = '/katalog/'+props.art;
+	return(
+		<div className={cl.product}>
+		<img className={cl.foto} src={props.foto}/>
+
+		<div className={cl.prodt}>
+			<Link to={path} className={cl.title}>{props.title}</Link>
+			<div className={cl.art}>Арт.:{props.art}</div>
+		</div>
+
+		<div className={cl.prodt}>
+			<div className={cl.price}>{props.price} руб/шт</div>
+			<div className={cl.buy}></div>
+		</div>
+	
+	</div>
+)}
 
 const Katalog = () =>{
 
@@ -16,7 +37,10 @@ const [selected, setSelected] = React.useState(0);
 const list =['популярности', "цене", "алфавиту"];
 const sortName=list[selected];
 
+let productElements= products.map(product=><ProductOne foto={product.filtr} title={product.title} art={product.art} price={product.price}/>)
 
+
+console.log(products)
 
 const onClickListItem = (i)=>{
 setSelected(i);
@@ -47,11 +71,8 @@ return  (
 
 	<div>Настройки</div></div>
 
-		<Product foto={filtr} title='Фильтр ARIONA POOLS OCEAN 510 - 10,2 М³/Ч' art='FDOC400TR02' price={1490}/>
-		<Product foto={oreon680} title='Фильтр ARIONA POOLS OCEAN 680 - 18,4 М³/Ч' art='FDOC400TR04' price={2323}/>
-		<Product foto={emaux} title='Фильтр EMAUX V350 Ø355мм' art='88010101' price={579}/>
-		<Product foto={top40} title='Фильтр ARIONA POOLS PACIFIC TOP 400 - 6,5 М³/Ч' art='FDPA400BTVT01' price={1135}/>
-	
+		{productElements}
+
 	</div>
 );
 }
