@@ -10,6 +10,12 @@ line-height: 2vw;
 text-transform: uppercase;
 color: #BDBDBD;
 }
+.contactPhone{
+font-family: 'Montserrat';
+font-weight: 500;
+font-size: 1vw;
+color: #444444;
+}
 .main{
 	margin: 5vw 5vw 3vw 5vw;
 }
@@ -19,7 +25,7 @@ color: #BDBDBD;
 	justify-content: space-around;
 	margin-bottom: 5vw;
 }
-button{
+.button{
 	background-color: white;
 	height: 100%;	
 	border: 1px solid #D9D9D9;
@@ -45,7 +51,7 @@ color: #444444;
 text-decoration: none;
 }
 
-button a{
+.button a{
 	font-family: 'Philosopher';
 font-style: normal;
 font-weight: 400;

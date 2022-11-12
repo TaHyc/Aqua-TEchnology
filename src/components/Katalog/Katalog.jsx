@@ -1,79 +1,67 @@
 import React from "react";
 import cl from'./Katalog.module.css';
-import Product from './Product'
-import filtr from '../assets/фильтр.png'
-import ava from '../assets/ава.jpg'
-import top40 from '../assets/top40.png'
-import oreon680 from '../assets/oreon680.png'
-import emaux from '../assets/emaux.png'
-import products from '../../redux/products'
-import {Link} from 'react-router-dom';
+import Product from'./Product';
+import Settings from'./Settings';
+import Sort from'./Sort';
+import ItemsMenu1 from'./ItemsMenu1';
+import ItemsMenu2 from'./ItemsMenu2';
+import sort from '../assets/sort.png'
+import set from '../assets/настройка.png'
 
-
-const ProductOne=(props)=>{
-	let path = '/katalog/'+props.art;
-	return(
-		<div className={cl.product}>
-		<img className={cl.foto} src={props.foto}/>
-
-		<div className={cl.prodt}>
-			<Link to={path} className={cl.title}>{props.title}</Link>
-			<div className={cl.art}>Арт.:{props.art}</div>
-		</div>
-
-		<div className={cl.prodt}>
-			<div className={cl.price}>{props.price} руб/шт</div>
-			<div className={cl.buy}></div>
-		</div>
-	
-	</div>
-)}
 
 const Katalog = () =>{
 
+const [openSettings, setOpenSettings] = React.useState(false);
+const [checked, setChecked] = React.useState(false);
+const [selectedSort, setSelectedSort] = React.useState({name: 'цене (убывание)', sortProperti: 'price'});
+const [selectedMenu, setselectedMenu] = React.useState();
+const [items, setItems] = React.useState([]);
 
-const [open, setOpen] = React.useState(false);
-const [selected, setSelected] = React.useState(0);
-const list =['популярности', "цене", "алфавиту"];
-const sortName=list[selected];
+React.useEffect(()=>{
 
-let productElements= products.map(product=><ProductOne foto={product.filtr} title={product.title} art={product.art} price={product.price}/>)
+const sortBy = selectedSort.sortProperti.replace('-','')
+const order = selectedSort.sortProperti.includes('-')? 'asc': 'desc'
+const selectedI1 = `Item1Properti=${selectedMenu}`
+fetch(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/items?sortBy=${sortBy}&order=${order}&${selectedI1}`)
+.then(res=>res.json()
+).then((arr)=>{
+  setItems(arr)
+  console.log(selectedMenu)
+})   
+window.scrollTo(0, 0);
+},[selectedSort, selectedMenu])
 
+let productElements= items.map(item=><Product  key={item.id} all={item}/>)
 
-console.log(products)
-
-const onClickListItem = (i)=>{
-setSelected(i);
-setOpen(false);
+const onClickSettings = ()=>{
+setOpenSettings(false);
 }
-
+//цель одна задач несколько
 
 return  (
 <div className={cl.main}>
-	<div className={cl.header}>Каталог
+	
+	<div className={cl.left}>каталог
+		<div className={cl.menuKatalog}>
 
-	<div >Сортировать по:</div>
-		<span onClick={()=>setOpen(!open)}>{sortName}</span>
-	{ open && (
-		<div className="sort_popus">
-			<ul>
-				{list.map((name, i)=>(
-			<li 
-			key={i}
-			onClick={()=>onClickListItem(i)}
-			className={selected===i ? 'active': ''}>
-			{name}	
-			</li>
-		))}
-		</ul>
-	</div>)}
+		<ItemsMenu1 value={selectedMenu} setselectedMenu={(i)=>setselectedMenu(i)}/>
+		<ItemsMenu2/>		
 
-
-	<div>Настройки</div></div>
-
-		{productElements}
-
+		</div>
 	</div>
+
+	<div className={cl.rigth}>
+		<div className={cl.sortAll}>
+		
+		<Sort value={selectedSort} setSelectedSort={(i)=>setSelectedSort(i)}/>
+		<Settings value={openSettings} onClickSettings={()=>setOpenSettings()} onClickSetChecked={()=>setChecked()}/>
+
+		</div>
+	<div className={cl.katalogItems}>
+		{productElements}
+		</div>
+	</div>
+</div>
 );
 }
 

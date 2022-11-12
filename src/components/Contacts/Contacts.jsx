@@ -15,8 +15,8 @@ return  (
 	<div className={cl.header}>мессенджеры<div className={cl.vtw}><a href='https://t.me/AquaTechnology_bot'><img src={viber}/></a>
 	<a href='https://t.me/AquaTechnology_bot'><img src={tg}/></a>
 	<a href='https://t.me/AquaTechnology_bot'><img src={viber}/></a></div></div>
-	<div className={cl.header}>справочная служба<text>+375-17-373-39-44</text><text>+375-29-312-33-21</text></div>
-	<div className={cl.header}>e-mail<text><a href='https://t.me/AquaTechnology_bot'>info@e-pool.by</a></text></div>
+	<div className={cl.header}>справочная служба<div className={cl.contactPhone}>+375-17-373-39-44</div><div className={cl.contactPhone}>+375-29-312-33-21</div></div>
+	<div className={cl.header}>e-mail<div><a href='https://t.me/AquaTechnology_bot'>info@e-pool.by</a></div></div>
 	<button className={cl.button}><a href='https://t.me/AquaTechnology_bot'>задать вопрос</a></button>
 
 	</div>

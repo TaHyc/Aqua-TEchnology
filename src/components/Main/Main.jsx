@@ -6,8 +6,9 @@ import fotoRight from '../assets/фото справа.png'
 import foto2left from '../assets/наши услуги.png'
 import arrownLU from '../assets/стрелка лево-верх.png'
 import blueFoto from '../assets/bluediv.png'
-import p1 from '../assets/p1.png'
-import p2 from '../assets/p2.png'
+import gomel from '../assets/gomel.png'
+import radon from '../assets/Radon.png'
+import close from '../assets/close.png'
 import p3 from '../assets/p3.png'
 
  
@@ -16,7 +17,9 @@ return  (
 	<div>
 	<div className={cl.mainDiv}>
 		<div className={cl.left}>
-		<div className={cl.mainText}>Наше отличие - это наше наличие!</div>
+		<div className={cl.mainText}>бассейны “под ключ”</div>
+		<div className={cl.mainMinText}>Компания Aqua Technology проектирует и создаёт бассейны для профессионального спорта и 
+		активного отдыха с 2009 года. Обратившись к нам, вы получите гарантию качества и надёжности по доступным ценам.</div>
 			<div className={cl.elipseG}>
 			<div className={cl.elipseC}>
 				<Link to="/about" className={cl.link}>О КОМПАНИИ<img className={cl.arrownRight}src={arrownRight}/></Link>
@@ -33,25 +36,29 @@ return  (
 	<img className={cl.foto2left}src={foto2left}/></div>
 
 	<div className={cl.right2}>
-		<text>Тут текст 1<img className={cl.arrownLU}src={arrownLU}/></text>
-		<text>Тут текст 2<img className={cl.arrownLU}src={arrownLU}/></text>
-		<text>Тут текст 3<img className={cl.arrownLU}src={arrownLU}/></text>
-		<text>Тут текст 4<img className={cl.arrownLU}src={arrownLU}/></text>
-		<text>Тут текст 5<img className={cl.arrownLU}src={arrownLU}/></text>
+		<div className={cl.right2Text}>строительство бассейнов<img className={cl.arrownLU}src={arrownLU}/></div>
+		<div className={cl.right2Text}>проектирование бассейнов<img className={cl.arrownLU}src={arrownLU}/></div>
+		<div className={cl.right2Text}>продажа оборудования для бассейнов<img className={cl.arrownLU}src={arrownLU}/></div>
+		<div className={cl.right2Text}>продажа химии для бассейнов<img className={cl.arrownLU}src={arrownLU}/></div>
 	</div>
 </div>
 
 	<div className={cl.blueDiv}>
       <h1 className={cl.blueMainText}>Почему выбирают нас?</h1>
 		
-<div className={cl.blueText}>
-	<div className={cl.blueTextColumn}>
-	<text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar magna purus semper id est lacus. Aenean morbi at eros curabitur volutpat. Maecenas commodo integer massa ac ornare sed dui. Nunc suspendisse urna, lorem pharetra, sit ultrices. </text>
-	<text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar magna purus semper id est lacus. Aenean morbi at eros curabitur volutpat. Maecenas commodo integer massa ac ornare sed dui. Nunc suspendisse urna, lorem pharetra, sit ultrices. </text>
+<div className={cl.blueDivText}>
+	<div className={cl.blueTextColumn}>Первый импортёр в беларуси
+	<div className={cl.blueText}>На сайте представлено более 3000 наименований товаров, необходимых для успешного строительства и функционирования бассейнов, саун, прудов.
+</div>
+	более 100 закрытых гос.проектов
+	<div className={cl.blueText}>Мы специализируемся на проектировании и строительстве общественных бассейнов и СПА-центров. На счету компании более 100 завершенных государственных объектов.
+</div>
 	</div>
-	<div className={cl.blueTextColumn}>
-	<text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar magna purus semper id est lacus. Aenean morbi at eros curabitur volutpat. Maecenas commodo integer massa ac ornare sed dui. Nunc suspendisse urna, lorem pharetra, sit ultrices. </text>
-	<text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar magna purus semper id est lacus. Aenean morbi at eros curabitur volutpat. Maecenas commodo integer massa ac ornare sed dui. Nunc suspendisse urna, lorem pharetra, sit ultrices. </text>
+	<div className={cl.blueTextColumn}>Выгодно
+	<div className={cl.blueText}>Предлагаем экономически выгодные решения, систему бонусов и скидок для постоянных клиентов.</div>
+	опыт работы более 10 лет
+	<div className={cl.blueText}>Мы уверены в качестве предоставляемых нами услуг и готовы браться за самые сложные проекты.
+</div>
 	</div>
 		<div className={cl.divBlueFoto}><img className={cl.blueFoto}src={blueFoto}/></div>
 </div>
@@ -62,11 +69,10 @@ return  (
 	<h1 className={cl.ProjecktsMainText}>наши проекты</h1>
 
 	<div className={cl.p5}>
-		<div className={cl.p}><img className={cl.pFoto}src={p1}/>textetxetxetxteetxetxetextextetxetetxttextxetextextextext</div>
-		<div className={cl.p}><img className={cl.pFoto}src={p2}/>textetxetxetxteetxetxetextextetxetetxttextxetextextextext</div>
-		<div className={cl.p}><img className={cl.pFoto}src={p3}/>textetxetxetxteetxetxetextextetxetetxttextxetextextextext</div>
-		<div className={cl.p}><img className={cl.pFoto}src={p2}/>textetxetxetxteetxetxetextextetxetetxttextxetextextextext</div>
-		
+		<div className={cl.p}><img className={cl.pFoto} src={gomel}/><div className={cl.p5Main}>Общественные бассейны</div><div className={cl.p5text}>Дворец водных видов спорта, г. Гомель</div></div>
+		<div className={cl.p}><img className={cl.pFoto} src={radon}/><div className={cl.p5Main}>Общественные бассейны</div><div className={cl.p5text}>Санаторий Радон</div></div>
+		<div className={cl.p}><img className={cl.pFoto} src={p3}/><div className={cl.p5Main}>частные бассейны</div><div className={cl.p5text}>Бассейн на участке</div></div>
+		<div className={cl.p}><img className={cl.pFoto} src={close}/><div className={cl.p5Main}>частные бассейны</div><div className={cl.p5text}>Частный закрытый бассейн</div></div>
 	</div>
  <div className={cl.elipseGD}>
 			<div className={cl.elipseCD}>

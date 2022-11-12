@@ -1,0 +1,10 @@
+
+		<div className={cl.prodt}>
+		<div className={cl.title}>{props.productPage.title}</div>
+			<div className={cl.art}>{props.productPage.art}</div>
+		</div>
+
+		<div className={cl.prodt}>
+			<div className={cl.price}>{props.productPage.price} руб/шт</div>
+			<div onClick={onClickAdd}className={cl.buy}>{count}</div>
+		</div>

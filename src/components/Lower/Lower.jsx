@@ -29,7 +29,7 @@ return  (
 				<Link to="/main" className={cl.mainText}></Link>
 		</div>
 		</div>
-        <h5>@2022 Aqua Technology</h5>
+        <h5 className={cl.mainTextLower}>@2022 Aqua Technology</h5>
 	</div>
 )
 }
