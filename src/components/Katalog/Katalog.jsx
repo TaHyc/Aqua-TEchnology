@@ -11,31 +11,30 @@ import set from '../assets/настройка.png'
 
 const Katalog = () =>{
 
-const [openSettings, setOpenSettings] = React.useState(false);
+
 const [checked, setChecked] = React.useState(false);
-const [selectedSort, setSelectedSort] = React.useState({name: 'цене (убывание)', sortProperti: 'price'});
-const [selectedMenu, setselectedMenu] = React.useState();
+const [selectedSort, setSelectedSort] = React.useState({name: 'цене (возрастание)', sortProperti: '-price'});
+const [selectedMenu, setselectedMenu] = React.useState([]);
 const [items, setItems] = React.useState([]);
 
 React.useEffect(()=>{
 
 const sortBy = selectedSort.sortProperti.replace('-','')
 const order = selectedSort.sortProperti.includes('-')? 'asc': 'desc'
-const selectedI1 = `Item1Properti=${selectedMenu}`
-fetch(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/items?sortBy=${sortBy}&order=${order}&${selectedI1}`)
+const selectedI1 = `&Item1Properti=${selectedMenu}`
+const haven = `&have=${checked}`
+
+fetch(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/items?sortBy=${sortBy}&order=${order}${selectedI1}`)
 .then(res=>res.json()
 ).then((arr)=>{
   setItems(arr)
-  console.log(selectedMenu)
 })   
 window.scrollTo(0, 0);
-},[selectedSort, selectedMenu])
+},[selectedSort, selectedMenu, checked])
 
 let productElements= items.map(item=><Product  key={item.id} all={item}/>)
 
-const onClickSettings = ()=>{
-setOpenSettings(false);
-}
+//?sortBy=&have=true
 //цель одна задач несколько
 
 return  (
@@ -54,7 +53,7 @@ return  (
 		<div className={cl.sortAll}>
 		
 		<Sort value={selectedSort} setSelectedSort={(i)=>setSelectedSort(i)}/>
-		<Settings value={openSettings} onClickSettings={()=>setOpenSettings()} onClickSetChecked={()=>setChecked()}/>
+		<Settings value={checked} onClickSetChecked={(i)=>setChecked(i)}/>
 
 		</div>
 	<div className={cl.katalogItems}>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect}  from "react";
 import cl from'./Main.module.css';
 import arrownRight from '../assets/стрелка.png'
 import {Link} from'react-router-dom';
@@ -13,6 +13,9 @@ import p3 from '../assets/p3.png'
 
  
 const Main = () =>{
+	useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 return  (
 	<div>
 	<div className={cl.mainDiv}>
@@ -76,7 +79,7 @@ return  (
 	</div>
  <div className={cl.elipseGD}>
 			<div className={cl.elipseCD}>
-				<Link to="/about" className={cl.link}>СМОТРЕТЬ БОЛЬШЕ</Link>
+				<Link to="/portfolio" className={cl.link}>СМОТРЕТЬ БОЛЬШЕ</Link>
 			</div>
 		</div>
 </div>

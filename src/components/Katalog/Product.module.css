@@ -8,8 +8,19 @@ margin-top: 4vw;
 margin-left: 6vw;
 display: flex;
 flex-direction: column;
-justify-content: space-around;
+justify-content: space-between;
 }
+.divFoto{
+height: 70%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.prodFoto{
+	width: 80%;
+	height: 80%;
+}
+
 .active{
 text-decoration: underline;
 }
@@ -19,20 +30,28 @@ text-decoration: underline;
 	width: 100%;
 	padding-bottom: 1vw;
 align-items: center;
+justify-content: space-between;
 }
+
 .title{
-	width: 60%;
+width: 50%;
 font-size: 1vw;
 color: #444444;
 text-decoration: none;
 }
 .art{
-	width: 40%;	
+width: 50%;	
 font-size: 0.7vw;
 color: #BDBDBD;
 display: flex;
-flex-direction: row;
-justify-content: flex-end;
+flex-direction: column;
+align-items: flex-end;
+height: 35%;
+}
+
+.have{
+font-size: 0.8vw;
+color:  #82C9DC;
 }
 .price{
 	width: 50%;

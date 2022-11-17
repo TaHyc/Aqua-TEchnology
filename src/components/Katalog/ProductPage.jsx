@@ -3,8 +3,7 @@ import cl from'./ProductPage.module.css';
 import {Link} from'react-router-dom';
 
 const ProductPage = (props) =>{
-let numObj = props.id
-var first= props.all[numObj]
+const first= props.all[props.id]
 const [num, setNum] = useState(0);
 var numFyp= props.all[num]
 const [count, setCount] = useState(0);
@@ -17,13 +16,15 @@ useEffect(() => {
     window.scrollTo(0, 0);
     handleClick()
   }, []);
-
+useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 const onClickAdd= () =>{
 	setCount(count+1)
 }
 
 const onClickKorzina= () =>{
-	if(count==0){
+	if(count===0){
 		alert('Вы не выбрали товар')
 	}
 	else{
@@ -35,12 +36,15 @@ const onClickKorzina= () =>{
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  const handleClick = () => {
+ const handleClick = () => {
     setNum(randomNumberInRange(0, 4));
   };
 
 const onClickRemote= () =>{
 	setCount(count-1)
+}
+const onClickFyp= () =>{
+  window.scrollTo(0, 0);
 }
 
 let path = '/product/'+numFyp.art
@@ -112,7 +116,7 @@ return (
 	<div className={cl.fypProduct}>
 		<img className={cl.fypFoto} src={numFyp.foto}/>
 		<div className={cl.fypProdt}>
-			<Link to={path} className={cl.fypTitle}>{numFyp.title}</Link>
+			<Link to={path} className={cl.fypTitle} onClick={onClickFyp}>{numFyp.title}</Link>
 		</div>
 
 		<div className={cl.fypProdt}>

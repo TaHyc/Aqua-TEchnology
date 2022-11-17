@@ -54,15 +54,14 @@ font-size: 1.6vw;
 color: #444444; 
 }
 .buy{
-width: 40%;	
 background-color: #82C9DC;
 font-family: 'Philosopher';
 font-style: normal;
 font-weight: 400;
-font-size: 2vw;
+font-size: 1.3vw;
 text-transform: uppercase;
 color: #FFFFFF;
-padding: 0.3vw;
+padding: 0.5vw 2.5vw 0.5vw 2.5vw;
 text-align: center;
 text-decoration: none;
 cursor: pointer;
@@ -114,7 +113,7 @@ align-items: center;
 
 /*рекомендации*/
 .fyp{
-margin-top: 3vw;
+margin-top: 10vw;
 margin-bottom: 3vw;
 font-family: 'Montserrat';
 font-style: normal;

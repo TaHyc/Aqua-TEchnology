@@ -8,6 +8,7 @@ import Main from "./components/Main/Main";
 import Lower from "./components/Lower/Lower";
 import Contacts from "./components/Contacts/Contacts";
 import ProductPage from './components/Katalog/ProductPage';
+import Portfolio from "./components/Portfolio/Portfolio";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 
@@ -43,11 +44,14 @@ let path= items.map(path=>`product/${path.art}`)
         <Route path='katalog/' element={ <Katalog/> } /> 
         <Route path='about/' element={ <About /> } />
         <Route path='сontacts/' element={ <Contacts /> } />
+        <Route path='portfolio/' element={ <Portfolio /> } />
         <Route path={path[0]} element={ <ProductPage all={items} id='0'/> } />
         <Route path={path[1]} element={ <ProductPage all={items} id='1'/> } />
         <Route path={path[2]} element={ <ProductPage all={items} id='2'/> } />
         <Route path={path[3]} element={ <ProductPage all={items} id='3'/> } />
-
+        <Route path={path[4]} element={ <ProductPage all={items} id='4'/> } />
+        <Route path={path[5]} element={ <ProductPage all={items} id='5'/> } />
+        <Route path={path[6]} element={ <ProductPage all={items} id='6'/> } />
         </Routes>
     
 

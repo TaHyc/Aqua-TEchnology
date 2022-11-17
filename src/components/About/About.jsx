@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import cl from'./About.module.css';
 import aboutcomp from '../assets/aboutcomp.png'
 import t1 from '../assets/t1.png'
@@ -11,6 +11,9 @@ import end from '../assets/end.png'
 
 
 const About = () =>{
+	useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 return  (
 	<div>
 
