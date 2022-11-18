@@ -16,14 +16,26 @@ return(
 <div className={cl.settingsAll}><img className={cl.settingsFoto} onClick={()=>onClickSettings(!openSettings)} src={set}/>
 { openSettings && (
 <div className={cl.settingsMenu}>
-<div className={cl.settingsHave}>
 <span>В наличии</span>
-			</div>
-<form name="myForm">
-    <input type="radio" onClick={()=>onClickSetChecked(!value)} checked={value}/> в наличии
-			</form>
-{<div>Бренд<br></br>Бренд<br></br>Бренд<br></br>Бренд<br></br></div>}
-			</div>)}</div>
+			
+<form className={cl.formMenu} >
+<input type="radio" onClick={()=>onClickSetChecked(!value)} checked={value}/> в наличии
+</form>
+			Бренд
+<div className={cl.brends}>
+<div className={cl.choiseBrend}><input  type="checkbox" onClick={()=>console.log('1')} />ariona pools</div>
+<div className={cl.choiseBrend}><input  type="checkbox" onClick={()=>console.log('2')} />dryden aqua</div>
+<div className={cl.choiseBrend}><input  type="checkbox" onClick={()=>console.log('3')} />Emaux</div>
+<div className={cl.choiseBrend}><input  type="checkbox" onClick={()=>console.log('4')} />Merkury</div>
+<div className={cl.choiseBrend}><input  type="checkbox" onClick={()=>console.log('5')} />Pentair water</div>
+</div>
+
+<div className={cl.MenuBottoms}>
+<bottom className={cl.bottomMenu} onClick={()=>console.log('Нажата кнопка Сбросить')}>Сбросить</bottom>
+<bottom className={cl.bottomMenu} onClick={()=>console.log('Нажата кнопка Применить')}>Применить</bottom>
+</div>
+
+</div>)}</div>
 		</>
 )
 }
