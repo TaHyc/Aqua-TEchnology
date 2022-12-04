@@ -7,6 +7,7 @@ import ItemsMenu1 from'./ItemsMenu1';
 import ItemsMenu2 from'./ItemsMenu2';
 import sort from '../assets/sort.png'
 import set from '../assets/настройка.png'
+import {SearchContext} from "../../App";
 
 
 const Katalog = () =>{
@@ -16,6 +17,8 @@ const [checked, setChecked] = React.useState(false);
 const [selectedSort, setSelectedSort] = React.useState({name: 'цене (возрастание)', sortProperti: '-price'});
 const [selectedMenu, setselectedMenu] = React.useState([]);
 const [items, setItems] = React.useState([]);
+
+const {search} = React.useContext(SearchContext);
 
 React.useEffect(()=>{
 
@@ -32,7 +35,12 @@ fetch(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/items?sortBy=${sortBy}&order=
 window.scrollTo(0, 0);
 },[selectedSort, selectedMenu, checked])
 
-let productElements= items.map(item=><Product  key={item.id} all={item}/>)
+const pizzas = items.filter(item=>{
+	if(item.title.toLowerCase().includes(search.toLowerCase())){
+		return true
+	}
+	return false
+}).map(item=><Product  key={item.id} all={item}/>) 
 
 //?sortBy=&have=true
 //цель одна задач несколько
@@ -57,7 +65,7 @@ return  (
 
 		</div>
 	<div className={cl.katalogItems}>
-		{productElements}
+		{pizzas}
 		</div>
 	</div>
 </div>

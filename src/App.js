@@ -11,12 +11,17 @@ import ProductPage from './components/Katalog/ProductPage';
 import Portfolio from "./components/Portfolio/Portfolio";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
+export const SearchContext = React.createContext('');
+
 
 
 const App = () =>{
 
 
+
+
 const [items, setItems] = React.useState([]);
+const [search, setselectedSearch] = React.useState('');
 
 
 React.useEffect(()=>{
@@ -28,20 +33,20 @@ fetch('https://635ffdbb3e8f65f283c0fff9.mockapi.io/items')
 })
 },[])
 
-
 let path= items.map(path=>`product/${path.art}`)
 
 
   return (
       <BrowserRouter>
   <div className="appWrap">
+  <SearchContext.Provider value={{search, setselectedSearch}}>
 
     <Header />
       <div className="appWrapContent">
         <Routes>
         
         <Route path='main/' element={ <Main /> } />
-        <Route path='katalog/' element={ <Katalog/> } /> 
+        <Route path='katalog/' element={ <Katalog /> } /> 
         <Route path='about/' element={ <About /> } />
         <Route path='сontacts/' element={ <Contacts /> } />
         <Route path='portfolio/' element={ <Portfolio /> } />
@@ -58,6 +63,7 @@ let path= items.map(path=>`product/${path.art}`)
       </div>
 
     <Lower />
+     </SearchContext.Provider>
   </div>
 
     </BrowserRouter>

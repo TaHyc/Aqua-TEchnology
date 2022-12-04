@@ -1,0 +1,18 @@
+.search{
+	border: 1px #444444 solid;
+	border-radius: 5px;
+	animation: openSearch 1s 1;
+	font-size: 0.9vw;
+font-family: 'Montserrat';
+}
+@keyframes openSearch{
+	0%{
+	transform: translateX(-20px);
+	opacity: 0;
+	}	
+	100%{
+	opacity: 1;
+
+	}
+}
+

@@ -16,9 +16,7 @@ useEffect(() => {
     window.scrollTo(0, 0);
     handleClick()
   }, []);
-useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
 const onClickAdd= () =>{
 	setCount(count+1)
 }
