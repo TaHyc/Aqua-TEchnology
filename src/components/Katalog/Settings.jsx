@@ -10,7 +10,6 @@ const [openSettings, setOpenSettings] = React.useState(false);
 const onClickSettings = (e)=>{
 setOpenSettings(e);
 }
-console.log(value)
 return(
 	<>
 <div className={cl.settingsAll}><img className={cl.settingsFoto} onClick={()=>onClickSettings(!openSettings)} src={set}/>
@@ -31,7 +30,7 @@ return(
 </div>
 
 <div className={cl.MenuBottoms}>
-<bottom className={cl.bottomMenu} onClick={()=>console.log('Нажата кнопка Сбросить')}>Сбросить</bottom>
+<bottom className={cl.bottomMenu} onClick={()=>onClickSetChecked(false)}>Сбросить</bottom>
 <bottom className={cl.bottomMenu} onClick={()=>console.log('Нажата кнопка Применить')}>Применить</bottom>
 </div>
 

@@ -19,9 +19,7 @@ return(
 <div className={cl.itemMenu} onClick={()=>setOpenItemsMenu1(!openItemsMenu1)}>Фильтровальное оборудование</div>
 		{ openItemsMenu1 && (<div >
 		<ul className={cl.ulMenu}>
-		{list.map((name, i)=>(<li key={i} onClick={()=>setselectedMenu(i)}
-	className={value===i ? 'active': ''}>{name}</li>))}</ul>
-			</div>)}
+		{list.map((name, i)=>(<li key={i} onClick={()=>setselectedMenu(i)} className={value===i ? 'active': 'haha'}>{name}</li>))}</ul></div>)}
 		</>
 )
 }

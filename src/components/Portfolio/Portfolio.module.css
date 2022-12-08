@@ -1,0 +1,83 @@
+.menu{
+font-family: 'Philosopher';
+font-style: normal;
+font-weight: 400;
+font-size: 1.5vw;
+text-transform: uppercase;
+color: #828282;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 75%;
+margin: auto;
+margin-top: 4vw;
+cursor: pointer;
+}
+.active{
+	color: red;
+}
+.pool{
+width: 40vw;
+margin-top: 3vw;
+padding: 2vw;
+}
+@keyframes openSearch{
+	0%{
+	transform: translateX(-20px);
+	opacity: 0;
+	}	
+	100%{
+	opacity: 1;
+
+	}
+}
+.portfolio{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 4vw 0 4vw;
+	justify-content: space-between;
+}
+
+.poolT {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.title{
+font-family: 'Philosopher';
+font-style: normal;
+font-weight: 400;
+font-size: 1.5vw;
+text-transform: uppercase;
+color: #BDBDBD
+}
+.name{
+	font-family: 'Montserrat';
+font-style: normal;
+font-weight: 300;
+font-size: 1.2vw;
+color: #444444;
+}
+.poolFullText{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+height: 6vw;
+margin-top: 2vw;
+}
+.poolLink{
+	display: flex;
+	align-items: center;
+}
+.link{
+	display: flex;
+	align-items: center;
+height: 40%;
+font-family: 'Philosopher';
+font-style: normal;
+font-weight: 400;
+font-size: 1.3vw;
+text-transform: uppercase;
+color: #444444;
+padding: 0.7vw 2.8vw 0.7vw 2.8vw;
+}

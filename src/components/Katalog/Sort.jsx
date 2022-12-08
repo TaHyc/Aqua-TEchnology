@@ -6,9 +6,9 @@ import sort from '../assets/sort.png'
 const Sort = ({value, setSelectedSort}) =>{
 const [openSort, setOpen] = React.useState(false);
 const list =[
-{name: 'популярности', sortProperti: 'rating'}, 
-{name: 'цене (возрастание)', sortProperti: '-price'},
-{name: 'цене (убывание)', sortProperti: 'price'}]
+{name: 'По популярности', sortProperti: 'rating'}, 
+{name: 'По цене (возрастание)', sortProperti: '-price'},
+{name: 'По цене (убывание)', sortProperti: 'price'}]
 
 
 const onClickListItem = (obj)=>{

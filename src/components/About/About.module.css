@@ -2,15 +2,15 @@
   display: flex;
   flex-direction: row;
   margin: 5vw 4vw 5vw 5vw;
-  height: 25vw;
+padding-bottom: 4vw;
 }
 .left{
-  width: 50%;
+  width: 40%;
   font-family: 'Montserrat';
-  font-size: 1vw;
+  font-size: 1.3vw;
 font-style: normal;
 color: #444444;
-line-height: 2vw;
+line-height: 1.8;
 }
 .left h1{
   font-family: "Philosopher";
@@ -19,14 +19,15 @@ font-weight: 400;
 font-size: 3.5vw;
 color: #444444;
 margin-top: 0;
+margin-bottom: 5vw;
 }
 .rigth{
-  height: 100%;
 display: block;
-margin-left: auto;
+margin-left: 15vw;
 }
 .aboutcomp{
-  height: 100%;
+width: 110%;
+height: 110%;
 }
 .mission{
 display: flex;
@@ -131,6 +132,7 @@ margin: 3vw 5vw 4vw 5vw;
 }
 .history{
   margin: 5vw 4vw 5vw 5vw;
+  color: #444444;
 }
 .hisFoto{
   width: 35vw;
@@ -143,6 +145,7 @@ margin: 3vw 5vw 4vw 5vw;
 font-style: normal;
 font-weight: 400;
 font-size: 1.3vw;
+
 }
 .history h1{
   font-family: 'Philosopher';
@@ -181,7 +184,7 @@ justify-content: flex-end;
 .dirLeft ul{
   margin-block-start: 1vw;
   padding-inline-start: 2.5vw;
-  font-size: 1.6vw;
+  font-size: 1.3vw;
   line-height: 1.8;
   font-family: 'Montserrat';
  font-weight: 200;
@@ -199,6 +202,7 @@ font-weight: 400;
 font-size: 1.3vw;
 width: 50%;
 padding-left: 7vw;
+color: #444444;
 }
 .endFoto{
   width: 35vw;

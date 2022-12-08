@@ -10,6 +10,7 @@ import gomel from '../assets/gomel.png'
 import radon from '../assets/Radon.png'
 import close from '../assets/close.png'
 import p3 from '../assets/p3.png'
+import pepa from '../assets/свин.png'
 
  
 const Main = () =>{
@@ -39,10 +40,10 @@ return  (
 	<img className={cl.foto2left}src={foto2left}/></div>
 
 	<div className={cl.right2}>
-		<div className={cl.right2Text}>строительство бассейнов<img className={cl.arrownLU}src={arrownLU}/></div>
-		<div className={cl.right2Text}>проектирование бассейнов<img className={cl.arrownLU}src={arrownLU}/></div>
-		<div className={cl.right2Text}>продажа оборудования для бассейнов<img className={cl.arrownLU}src={arrownLU}/></div>
-		<div className={cl.right2Text}>продажа химии для бассейнов<img className={cl.arrownLU}src={arrownLU}/></div>
+		<Link to="/building" className={cl.right2Text}>строительство бассейнов<img className={cl.arrownLU}src={arrownLU}/></Link>
+		<Link to="/proeckting" className={cl.right2Text}>проектирование бассейнов<img className={cl.arrownLU}src={arrownLU}/></Link>
+		<Link to="/katalog" className={cl.right2Text}>продажа оборудования для бассейнов<img className={cl.arrownLU}src={arrownLU}/></Link>
+		<Link to="/katalog" className={cl.right2Text}>продажа химии для бассейнов<img className={cl.arrownLU}src={arrownLU}/></Link>
 	</div>
 </div>
 
@@ -57,7 +58,8 @@ return  (
 	<div className={cl.blueText}>Мы специализируемся на проектировании и строительстве общественных бассейнов и СПА-центров. На счету компании более 100 завершенных государственных объектов.
 </div>
 	</div>
-	<div className={cl.blueTextColumn}>Выгодно
+
+	<div className={cl.blueTextColumn}><h5><img className={cl.pepa}src={pepa}/> Выгодно</h5>
 	<div className={cl.blueText}>Предлагаем экономически выгодные решения, систему бонусов и скидок для постоянных клиентов.</div>
 	опыт работы более 10 лет
 	<div className={cl.blueText}>Мы уверены в качестве предоставляемых нами услуг и готовы браться за самые сложные проекты.
