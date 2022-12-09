@@ -59,7 +59,7 @@ return  (
 </div>
 	</div>
 
-	<div className={cl.blueTextColumn}><h5><img className={cl.pepa}src={pepa}/> Выгодно</h5>
+	<div className={cl.blueTextColumn}>выгодно
 	<div className={cl.blueText}>Предлагаем экономически выгодные решения, систему бонусов и скидок для постоянных клиентов.</div>
 	опыт работы более 10 лет
 	<div className={cl.blueText}>Мы уверены в качестве предоставляемых нами услуг и готовы браться за самые сложные проекты.
