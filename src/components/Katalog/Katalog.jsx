@@ -8,22 +8,27 @@ import ItemsMenu2 from'./ItemsMenu2';
 import sort from '../assets/sort.png'
 import set from '../assets/настройка.png'
 import {SearchContext} from "../../App";
+import {setSelectedMenu} from '../Redux/slices/filterSlice' 
+import {useSelector, useDispatch} from 'react-redux'
+
 
 
 const Katalog = () =>{
 
+const dispatch = useDispatch()
+
+const selectedMenu = useSelector((state) =>state.filter.selectedMenu)
+const selectedSort = useSelector((state) =>state.filter.selectedSort.sortProperti)
 
 const [checked, setChecked] = React.useState(false);
-const [selectedSort, setSelectedSort] = React.useState({name: 'цене (возрастание)', sortProperti: '-price'});
-const [selectedMenu, setselectedMenu] = React.useState([]);
 const [items, setItems] = React.useState([]);
 
 const {search} = React.useContext(SearchContext);
 
 React.useEffect(()=>{
 
-const sortBy = selectedSort.sortProperti.replace('-','')
-const order = selectedSort.sortProperti.includes('-')? 'asc': 'desc'
+const sortBy = selectedSort.replace('-','')
+const order = selectedSort.includes('-')? 'asc': 'desc'
 const selectedI1 = `&Item1Properti=${selectedMenu}`
 const haven = `&have=${checked}`
 
@@ -35,6 +40,11 @@ fetch(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/items?sortBy=${sortBy}&order=
 window.scrollTo(0, 0);
 },[selectedSort, selectedMenu, checked])
 
+
+const oneClickSetMenu=(i)=>{
+	dispatch(setSelectedMenu(i))
+}
+
 const pizzas = items.filter(item=>{
 	if(item.title.toLowerCase().includes(search.toLowerCase())){
 		return true
@@ -42,8 +52,6 @@ const pizzas = items.filter(item=>{
 	return false
 }).map(item=><Product  key={item.id} all={item}/>) 
 
-//?sortBy=&have=true
-//цель одна задач несколько
 
 return  (
 <div className={cl.main}>
@@ -51,7 +59,7 @@ return  (
 	<div className={cl.left}>каталог
 		<div className={cl.menuKatalog}>
 
-		<ItemsMenu1 value={selectedMenu} setselectedMenu={(i)=>setselectedMenu(i)}/>
+		<ItemsMenu1 value={selectedMenu} setMenu={oneClickSetMenu}/>
 		<ItemsMenu2/>		
 
 		</div>
@@ -60,7 +68,7 @@ return  (
 	<div className={cl.rigth}>
 		<div className={cl.sortAll}>
 		
-		<Sort value={selectedSort} setSelectedSort={(i)=>setSelectedSort(i)}/>
+		<Sort/>
 		<Settings value={checked} onClickSetChecked={(i)=>setChecked(i)}/>
 
 		</div>

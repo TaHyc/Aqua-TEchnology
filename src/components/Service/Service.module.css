@@ -1,0 +1,35 @@
+.recom{
+font-family: 'Philosopher';
+font-style: normal;
+font-weight: 400;
+font-size: 3.5vw;
+display: flex;
+text-transform: uppercase;
+color: #444444;
+margin: 5vw 4vw 5vw 4vw;
+}
+.recon{
+	width: 20vw;
+	border-radius: 50%;
+display: flex;
+position: absolute;
+overflow: hidden;
+	justify-content: end;
+}
+.prichini{
+	font-family: 'Philosopher';
+font-style: normal;
+font-weight: 400;
+font-size: 2vw;
+line-height: 50px;
+text-transform: uppercase;
+color: #444444;
+}
+.liRecom{
+	font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1vw;
+line-height: 27px;
+color: #444444;
+}

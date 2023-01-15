@@ -1,7 +1,7 @@
 import React from "react";
 import cl from'./Katalog.module.css';
 
-const ItemsMenu1 = ({value, setselectedMenu}) =>{
+const ItemsMenu1 = ({value, setMenu}) =>{
 
 const [openItemsMenu1, setOpenItemsMenu1] = React.useState(false);
 
@@ -19,7 +19,7 @@ return(
 <div className={cl.itemMenu} onClick={()=>setOpenItemsMenu1(!openItemsMenu1)}>Фильтровальное оборудование</div>
 		{ openItemsMenu1 && (<div >
 		<ul className={cl.ulMenu}>
-		{list.map((name, i)=>(<li key={i} onClick={()=>setselectedMenu(i)} className={value===i ? 'active': 'haha'}>{name}</li>))}</ul></div>)}
+		{list.map((name, i)=>(<li key={i} onClick={()=>setMenu(i)} >{name}</li>))}</ul></div>)}
 		</>
 )
 }

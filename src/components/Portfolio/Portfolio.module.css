@@ -13,24 +13,14 @@ margin: auto;
 margin-top: 4vw;
 cursor: pointer;
 }
-.active{
-	color: red;
-}
+
 .pool{
 width: 40vw;
+height: 30vw;
 margin-top: 3vw;
 padding: 2vw;
 }
-@keyframes openSearch{
-	0%{
-	transform: translateX(-20px);
-	opacity: 0;
-	}	
-	100%{
-	opacity: 1;
 
-	}
-}
 .portfolio{
 	display: flex;
 	flex-wrap: wrap;
@@ -58,12 +48,15 @@ font-weight: 300;
 font-size: 1.2vw;
 color: #444444;
 }
+.foto{
+	height: 25vw;
+}
 .poolFullText{
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-height: 6vw;
-margin-top: 2vw;
+height: 5vw;
+margin-top: 1vw;
 }
 .poolLink{
 	display: flex;
@@ -79,5 +72,6 @@ font-weight: 400;
 font-size: 1.3vw;
 text-transform: uppercase;
 color: #444444;
-padding: 0.7vw 2.8vw 0.7vw 2.8vw;
+padding: 0.5vw 2.5vw 0.5vw 2.5vw;
+border: 1px solid #D9D9D9;
 }

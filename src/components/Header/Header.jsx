@@ -11,11 +11,11 @@ import {SearchContext} from "../../App";
 const Header = () =>{
 
 const [openSearch, setOpenSearch] = React.useState(false);
-const {search, setselectedSearch} = React.useContext(SearchContext);
+const {search, setSelectedSearch} = React.useContext(SearchContext);
 
 
 return  (
-	<header>
+	<>
 	<div className={cl.header}>
 		<div className={cl.up}>
 			<div className={cl.groupe11}><img src={korzina}/><img src={account}/><img onClick={()=>setOpenSearch(!openSearch)} src={sourch}/>
@@ -26,7 +26,7 @@ return  (
 		<Menu />
 	</div>
 
-	</header>
+	</>
 )
 }
 

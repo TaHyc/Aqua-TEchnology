@@ -1,9 +1,15 @@
 import React from "react";
 import cl from'./Katalog.module.css';
 import sort from '../assets/sort.png'
+import {useSelector, useDispatch} from 'react-redux'
+import {setSelectedSort} from '../Redux/slices/filterSlice' 
 
 
-const Sort = ({value, setSelectedSort}) =>{
+const Sort = () =>{
+
+const dispatch = useDispatch()
+const selectedSort = useSelector((state) =>state.filter.selectedSort)
+
 const [openSort, setOpen] = React.useState(false);
 const list =[
 {name: 'По популярности', sortProperti: 'rating'}, 
@@ -12,19 +18,18 @@ const list =[
 
 
 const onClickListItem = (obj)=>{
-setSelectedSort(obj);
+dispatch(setSelectedSort(obj));
 setOpen(false);
 }
-
 
 return(
 	<>
 		<img className={cl.sortFoto} src={sort}/><div className={cl.sort}>
-				<div className={cl.span} onClick={()=>setOpen(!openSort)}>{value.name}</div>
+				<div className={cl.span} onClick={()=>setOpen(!openSort)}>{selectedSort.name}</div>
 			{ openSort && (<div>
 		<ul className={cl.ulKatalog}>
-		{list.map((obj, i)=>(<li  onClick={()=>onClickListItem(obj)} 
-			className={value.sortProperti===obj.sortProperti ? 'active': 'ulKatalog'}>{obj.name}</li>))}</ul>
+		{list.map((obj)=>(<li  onClick={()=>onClickListItem(obj)} 
+			className={cl.ulKatalog}>{obj.name}</li>))}</ul>
 			</div>)}
 		</div>
 </>

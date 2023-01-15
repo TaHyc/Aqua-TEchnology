@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from "react";
 import cl from'./ProductPage.module.css';
 import {Link} from'react-router-dom';
+import {useSelector, useDispatch} from 'react-redux'
+import {increment, decrement} from '../Redux/slices/countTovarSlice'
 
 const ProductPage = (props) =>{
 const first= props.all[props.id]
 const [num, setNum] = useState(0);
 var numFyp= props.all[num]
-const [count, setCount] = useState(0);
+
+const count = useSelector((state) => state.count.value)
+const dispatch = useDispatch()
 
 
-if(count<0){
-	setCount(count+1)
-}
 useEffect(() => {
     window.scrollTo(0, 0);
     handleClick()
   }, []);
 
-const onClickAdd= () =>{
-	setCount(count+1)
-}
+
 
 const onClickKorzina= () =>{
 	if(count===0){
@@ -38,12 +37,10 @@ const onClickKorzina= () =>{
     setNum(randomNumberInRange(0, 4));
   };
 
-const onClickRemote= () =>{
-	setCount(count-1)
-}
 const onClickFyp= () =>{
   window.scrollTo(0, 0);
 }
+
 
 let path = '/product/'+numFyp.art
 return (
@@ -57,9 +54,11 @@ return (
 				<div className={cl.count}>
 				Колличество
 				<div className={cl.buttomsAll}>
-				<div className={cl.buttoms}>
-					<buttom className={cl.countButtom} onClick={onClickRemote}>-</buttom>{count}
-					<buttom className={cl.countButtom} onClick={onClickAdd}>+</buttom>
+				<div className={cl.buttoms} buttoms>
+					<button className={cl.countButtom} aria-label="Increment value" onClick={() => dispatch(increment())}>+</button>
+        	<span>{count}</span>
+        	<button className={cl.countButtom} aria-label="Decrement value" onClick={() => dispatch(decrement())}>-</button>
+				
 				</div>
 				<div className={cl.buy} onClick={onClickKorzina}>В корзину</div>
 				</div>

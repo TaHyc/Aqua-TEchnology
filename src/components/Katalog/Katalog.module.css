@@ -54,12 +54,12 @@ color: #444444;
 	border: 1px solid #D9D9D9;
 font-size: 1.2vw;
 padding: 0.3vw;
+color: #82C9DC;
 }
 .ulKatalog{
 	list-style-type: none;
 	padding-inline-start: 0;
 	margin-top: 0;
-	color: #82C9DC;
 	border: 1px solid #D9D9D9;
 }
 .settingsFoto{

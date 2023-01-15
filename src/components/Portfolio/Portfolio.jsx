@@ -1,46 +1,52 @@
 import React from "react";
-import {selPools} from "../products";
 import cl from'./Portfolio.module.css';
-import p11 from '../assets/11.png'
-import p12 from '../assets/12.png'
-import p13 from '../assets/13.png'
-import p14 from '../assets/14.png'
-import p15 from '../assets/15.png'
-import p16 from '../assets/16.png'
-import p17 from '../assets/17.png'
-import {NavLink} from'react-router-dom';
+import {NavLink, useParams} from'react-router-dom';
+import Detailed from "./Detailed";
+import {useSelector, useDispatch} from 'react-redux'
+import stateProfile from '../Redux/slices/stateProfile'
 
 
-const Portfolio = () =>{
+const Portfolio = (selectedPool, setSelectedPool) =>{
+
+	
+const [selectedMenuPool, setSelectedMenuPool] = React.useState([]);	
+const [pools, setPools] = React.useState([]);
 
 const menuId = [
 'все проекты',
-'общественные бассейны',
 'частные бассейны',
+'общественные бассейны',
 'пруды']
 
-
+React.useEffect(()=>{
+const poolClass = selectedMenuPool >0 ?`?class=${selectedMenuPool}`:''
+fetch(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/pools${poolClass}`)
+.then(res=>res.json()
+).then((arr)=>{
+  setPools(arr)
+})   
+window.scrollTo(0, 0);
+},[selectedMenuPool])
 
 
 return  (
 	<>
 	<div className={cl.menu}>
-	{menuId.map((menuPull,i)=><div  className={cl.OneMenu}>{menuPull}</div>)}
+	{menuId.map((menuPull,i)=><div key={i} onClick={()=>setSelectedMenuPool(i)}>{menuPull}</div>)}
 	</div>
 	<div className={cl.portfolio}>
-{selPools.map(message=>
+	{pools.map(pool=>
 	<div className={cl.pool}>
-		<div className={cl.divFoto}>{message.foto}</div>
+	<img className={cl.foto} src={pool.foto}/>
 	<div className={cl.poolFullText}>
 		<div className={cl.poolT}>
-			<div className={cl.title}>{message.title}</div>
-			<div className={cl.name}>{message.name}</div>
+			<div className={cl.title}>{pool.title}</div>
+			<div className={cl.name}>{pool.name}</div>
 		</div>
 	<div className={cl.poolLink}>
-		<button className={cl.link}>подробнее</button>
+		<NavLink key={pool.id} to={`/portfolio/${pool.id}`} onClick={()=>setSelectedPool(pool.id)} className={cl.link}>подробнее</NavLink>
 	</div>
 	</div>
-
 	
 	</div>)}
 </div>
