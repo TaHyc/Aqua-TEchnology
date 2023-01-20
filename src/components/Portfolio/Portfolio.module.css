@@ -31,7 +31,6 @@ padding: 2vw;
 .poolT {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
 }
 .title{
 font-family: 'Philosopher';
@@ -46,6 +45,7 @@ color: #BDBDBD
 font-style: normal;
 font-weight: 300;
 font-size: 1.2vw;
+padding-top: 0.3vw;
 color: #444444;
 }
 .foto{
@@ -72,6 +72,6 @@ font-weight: 400;
 font-size: 1.3vw;
 text-transform: uppercase;
 color: #444444;
-padding: 0.5vw 2.5vw 0.5vw 2.5vw;
+padding: 0.5vw 2.3vw 0.5vw 2.3vw;
 border: 1px solid #D9D9D9;
 }

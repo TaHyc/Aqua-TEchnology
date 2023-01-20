@@ -1,6 +1,6 @@
 .product{
 width: 20vw;
-padding: 1vw 1vw 0 1vw;
+padding: 1vw 1vw 2vw 1vw;
 border: 1px solid #D9D9D9;
 font-family: 'Montserrat';
 font-weight: 500;
@@ -18,18 +18,16 @@ flex-direction: row;
 justify-content: center;
 }
 .prodFoto{
-	width: 80%;
-	height: 80%;
+width: 80%;
+height: 80%;
 }
 
 .active{
 text-decoration: underline;
 }
 .prodt{
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	padding-bottom: 1vw;
+display: flex;
+flex-direction: row;
 align-items: center;
 justify-content: space-between;
 }
@@ -55,15 +53,14 @@ font-size: 0.8vw;
 color:  #82C9DC;
 }
 .price{
-	width: 50%;
 font-weight: 400;
 font-size: 1.2vw;
 color: #444444; 
 }
 .buy{
-	width: 50%;	
-	background-color: #82C9DC;
-	font-family: 'Philosopher';
+width: 9vw;	
+background-color: #82C9DC;
+font-family: 'Philosopher';
 font-style: normal;
 font-weight: 400;
 font-size: 1.2vw;
@@ -71,6 +68,9 @@ text-transform: uppercase;
 color: #FFFFFF;
 padding: 0.5vw;
 text-align: center;
+position: absolute;
+margin-left: 10vw;
+margin-top: 1vw;
 }
 a {
 	text-decoration: none;

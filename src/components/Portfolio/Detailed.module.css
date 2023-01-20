@@ -13,7 +13,6 @@ padding: 4vw 0vw 4vw 0vw;
 .divFoto{
 	width: 65vw;
 	height: 40vw;
-
 }
 .foto{
 	width: 100%;
@@ -24,8 +23,8 @@ padding: 4vw 0vw 4vw 0vw;
 	margin: auto;
 }
 .request{
-	border: 1px solid #BDBDBD;
-	font-family: 'Montserrat';
+border: 1px solid #BDBDBD;
+font-family: 'Montserrat';
 font-style: normal;
 line-height: 2;
 text-transform: uppercase;
@@ -44,7 +43,7 @@ margin-top: 3vw;
 font-family: 'Philosopher';
 font-style: normal;
 font-weight: 400;
-font-size: 1.6vw;
+font-size: 1.4vw;
 text-transform: uppercase;
 color: #FFFFFF;
 background: #82C9DC;

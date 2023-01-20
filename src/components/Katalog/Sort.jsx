@@ -28,7 +28,7 @@ return(
 				<div className={cl.span} onClick={()=>setOpen(!openSort)}>{selectedSort.name}</div>
 			{ openSort && (<div>
 		<ul className={cl.ulKatalog}>
-		{list.map((obj)=>(<li  onClick={()=>onClickListItem(obj)} 
+		{list.map((obj)=>(<li key={obj.name} onClick={()=>onClickListItem(obj)} 
 			className={cl.ulKatalog}>{obj.name}</li>))}</ul>
 			</div>)}
 		</div>

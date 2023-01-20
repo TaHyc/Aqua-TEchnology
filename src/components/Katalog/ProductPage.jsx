@@ -1,23 +1,28 @@
 import React, { useState, useEffect } from "react";
 import cl from'./ProductPage.module.css';
-import {Link} from'react-router-dom';
+import {Link, useParams} from'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux'
 import {increment, decrement} from '../Redux/slices/countTovarSlice'
 
-const ProductPage = (props) =>{
-const first= props.all[props.id]
-const [num, setNum] = useState(0);
-var numFyp= props.all[num]
+const ProductPage = () =>{
+
+const {art}=useParams()	
+
+const [items, setItems] = React.useState([]);
+const [numFyp, setNum] = React.useState(0);
 
 const count = useSelector((state) => state.count.value)
 const dispatch = useDispatch()
 
-
-useEffect(() => {
-    window.scrollTo(0, 0);
-    handleClick()
-  }, []);
-
+useEffect(()=>{
+fetch(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/items/${art}`)
+.then(res=>res.json()
+).then((arr)=>{
+  setItems(arr)
+})   
+window.scrollTo(0, 0);
+   handleClick()
+},[art])
 
 
 const onClickKorzina= () =>{
@@ -25,7 +30,7 @@ const onClickKorzina= () =>{
 		alert('Вы не выбрали товар')
 	}
 	else{
-	alert(`Добавлено в корзину: ${first.title} в количестве ${count} штук(-и)`)
+	alert(`Добавлено в корзину: ${items.title} в количестве ${count} штук(-и)`)
 	}
 }
 
@@ -46,11 +51,11 @@ let path = '/product/'+numFyp.art
 return (
 <div className={cl.main}>
 		<div className={cl.up}>
-		<div className={cl.divFoto}><img className={cl.foto} src={first.foto}/></div>
+		<div className={cl.divFoto}><img className={cl.foto} src={items.foto}/></div>
 			<div className={cl.info}>
-			<div className={cl.title}>{first.title}</div>
-			<div className={cl.art}>Арт.: {first.art}</div>
-			<div className={cl.price}>{first.price} руб/шт</div>
+			<div className={cl.title}>{items.title}</div>
+			<div className={cl.art}>Арт.: {items.art}</div>
+			<div className={cl.price}>{items.price} руб/шт</div>
 				<div className={cl.count}>
 				Колличество
 				<div className={cl.buttomsAll}>
@@ -108,19 +113,7 @@ return (
 
 	</div>
 
-<div className={cl.fyp}>Рекоменедуем</div>
 
-	<div className={cl.fypProduct}>
-		<img className={cl.fypFoto} src={numFyp.foto}/>
-		<div className={cl.fypProdt}>
-			<Link to={path} className={cl.fypTitle} onClick={onClickFyp}>{numFyp.title}</Link>
-		</div>
-
-		<div className={cl.fypProdt}>
-			<div className={cl.fypPrice}>{numFyp.price} руб/шт</div>
-	</div>
-	
-</div>
 
 </div>
 )}

@@ -1,7 +1,6 @@
 import React from "react";
 import cl from'./Product.module.css';
-import {Link} from'react-router-dom';
-import { Route, Routes} from "react-router-dom";
+import {Link, useParams, Route, Routes} from'react-router-dom';
 
 let haven = '';
 
@@ -10,20 +9,31 @@ if (props.all.have==true)
 	{haven = <li className={cl.have}>Есть в наличии</li>;}
 else haven = <div>Нет в наличии</div>
 
-let path = '/product/'+props.all.art
-	
-	return(
+const MouseEnterSize = e => {
+ e.target.style.background= '#5b8c9a';
+// e.target.style.fontWeight = "600";
+// e.target.style.fontSize = "1.3vw";
+}
+
+const MouseLeaveSize = e => {
+	e.target.style.background = "#82C9DC";
+// e.target.style.fontWeight = "400";
+ //e.target.style.fontSize = "1.2vw";
+} 
+
+return(
 
 		<div className={cl.product}>
 		<div className={cl.divFoto}><img className={cl.prodFoto} src={props.all.foto}/></div>
 		<div className={cl.prodt}>
-			<Link to={path} className={cl.title}>{props.all.title}</Link>
+			<Link to={`/katalog/${props.all.id}`} className={cl.title}>{props.all.title}</Link>
 			<div className={cl.art}>Арт.: {props.all.art}{haven}</div>
 		</div>
 
 		<div className={cl.prodt}>
-			<div className={cl.price}>{props.all.price} руб/шт</div>
-			<Link to={path} className={cl.buy}>Купить</Link>
+			<div className={cl.price} style={{marginTop: "1vw"}}>{props.all.price} руб/шт</div>
+			<Link to={`/katalog/${props.all.id}`}onMouseEnter={MouseEnterSize} onMouseLeave={MouseLeaveSize}
+			 className={cl.buy}>Купить</Link>
 		</div>
 	
 	</div>

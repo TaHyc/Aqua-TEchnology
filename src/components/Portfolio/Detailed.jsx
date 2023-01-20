@@ -6,6 +6,14 @@ import p14 from '../assets/14.png'
 
 const Detailed = () =>{
 
+const MouseMoveSizeZakaz = e => {
+ e.target.style.fontSize = "1.5vw"
+}
+
+const MouseLeaveSizeZakaz = e => {
+ e.target.style.fontSize = "1.4vw"
+}  
+
 const {id}=useParams()
 const [pools, setPools] = React.useState([]);
 const [mainFoto, setMainFoto] = React.useState();
@@ -36,7 +44,8 @@ return  (
 			</div>
 		<div className={cl.request}><div className={cl.text}>Оформите заявку на сайте и мы свяжемся
 		 с Вами в близайшее время чтобы ответить на все интересующие Вас вопросы.</div>
-		 <a className={cl.button} href='https://t.me/AquaTechnology_bot'>заказать проект</a></div>
+		 <a className={cl.button} onMouseEnter={MouseMoveSizeZakaz} onMouseLeave={MouseLeaveSizeZakaz}
+		 href='https://t.me/AquaTechnology_bot'>заказать проект</a></div>
 	</div>	
 	</>
 )

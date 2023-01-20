@@ -14,11 +14,26 @@ import pepa from '../assets/свин.png'
 
  
 const Main = () =>{
-	useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+ 
+//window.scrollTo(0, 0)
+
+const MouseMoveSize = e => {
+ e.target.style.fontSize = "1.1vw"
+}
+
+const MouseLeaveSize = e => {
+ e.target.style.fontSize = "1vw"
+}  
+const MouseMoveSizeZakaz = e => {
+ e.target.style.fontSize = "1.5vw"
+}
+
+const MouseLeaveSizeZakaz = e => {
+ e.target.style.fontSize = "1.4vw"
+}  
+
 return  (
-	<div>
+	<>
 	<div className={cl.mainDiv}>
 		<div className={cl.left}>
 		<div className={cl.mainText}>бассейны “под ключ”</div>
@@ -26,8 +41,8 @@ return  (
 		активного отдыха с 2009 года. Обратившись к нам, вы получите гарантию качества и надёжности по доступным ценам.</div>
 			<div className={cl.elipseG}>
 			<div className={cl.elipseC}>
-				<Link to="/about" className={cl.link}>О КОМПАНИИ<img className={cl.arrownRight}src={arrownRight}/></Link>
-				
+				<Link to="/about" className={cl.link} onMouseEnter={MouseMoveSize} onMouseLeave={MouseLeaveSize}>
+				О КОМПАНИИ<img className={cl.arrownRight}src={arrownRight}/></Link>
 			</div>
 			</div>
 		</div>
@@ -81,13 +96,19 @@ return  (
 	</div>
  <div className={cl.elipseGD}>
 			<div className={cl.elipseCD}>
-				<Link to="/portfolio" className={cl.link}>СМОТРЕТЬ БОЛЬШЕ</Link>
+	<Link to="/portfolio" className={cl.link} onMouseEnter={MouseMoveSize} onMouseLeave={MouseLeaveSize}>СМОТРЕТЬ БОЛЬШЕ</Link>
 			</div>
 		</div>
 </div>
 
+	<div className={cl.request}><div style={{fontSize: '1.2vw', textTransform: 'none', width: '67%'}}>
+	<div  style={{fontWeight: 'bolder',fontSize: '1.5vw', textTransform: 'uppercase'}}>
+	расчёт стоимости</div>
+	Заполните форму заявки, введите исходные данные, и наши специалисты свяжутся с Вами в кратчайшие сроки.</div>
+	<a className={cl.button} onMouseEnter={MouseMoveSizeZakaz} onMouseLeave={MouseLeaveSizeZakaz}
+	href='https://t.me/AquaTechnology_bot'>заказать проект</a></div>
 
-	</div>
+	</>
 )
 }
 

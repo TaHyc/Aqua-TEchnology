@@ -45,7 +45,7 @@ const oneClickSetMenu=(i)=>{
 	dispatch(setSelectedMenu(i))
 }
 
-const pizzas = items.filter(item=>{
+const AllProducts = items.filter(item=>{
 	if(item.title.toLowerCase().includes(search.toLowerCase())){
 		return true
 	}
@@ -73,7 +73,7 @@ return  (
 
 		</div>
 	<div className={cl.katalogItems}>
-		{pizzas}
+		{AllProducts}
 		</div>
 	</div>
 </div>

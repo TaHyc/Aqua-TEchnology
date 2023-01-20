@@ -1,6 +1,5 @@
 import './App.css';
 import React from "react";
-import {selPools} from "./components/products";
 import Header from "./components/Header/Header";
 import Menu from "./components/Header/Menu";
 import Service from "./components/Service/Service";
@@ -20,23 +19,9 @@ export const SearchContext = React.createContext('');
 
 const App = () =>{
 
-const [items, setItems] = React.useState([]);
 const [search, setSelectedSearch] = React.useState('');
 
-React.useEffect(()=>{
-
-fetch('https://635ffdbb3e8f65f283c0fff9.mockapi.io/items')
-.then(res=>res.json()
-).then((arr)=>{
-  setItems(arr)
-})
-},[])
-
-
-
-let path= items.map(path=>`product/${path.art}`)
-
-  return (
+return (
 
       <BrowserRouter>
   <div className="appWrap">
@@ -46,7 +31,7 @@ let path= items.map(path=>`product/${path.art}`)
       <div className="appWrapContent">
         <Routes>
         
-        <Route path='main/' element={ <Main /> } />
+        <Route path='' element={ <Main /> } />
         <Route path='servis/' element={ <Service /> } />
         <Route path='katalog/' element={ <Katalog /> } /> 
         <Route path='katalog/:art' element={ <ProductPage/> } /> 
@@ -56,13 +41,7 @@ let path= items.map(path=>`product/${path.art}`)
         <Route path='portfolio/:id' element={ <Detailed /> }/>
         <Route path='building/' element={ <Building /> } />
         <Route path='proeckting/' element={ <Proeckting /> }/>
-        <Route path={path[0]} element={ <ProductPage all={items} id='0'/> } />
-        <Route path={path[1]} element={ <ProductPage all={items} id='1'/> } />
-        <Route path={path[2]} element={ <ProductPage all={items} id='2'/> } />
-        <Route path={path[3]} element={ <ProductPage all={items} id='3'/> } />
-        <Route path={path[4]} element={ <ProductPage all={items} id='4'/> } />
-        <Route path={path[5]} element={ <ProductPage all={items} id='5'/> } />
-        <Route path={path[6]} element={ <ProductPage all={items} id='6'/> } />
+
         </Routes>
     
 

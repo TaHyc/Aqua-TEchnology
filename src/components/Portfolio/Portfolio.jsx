@@ -18,6 +18,17 @@ const menuId = [
 'общественные бассейны',
 'пруды']
 
+const MouseEnterSize = e => {
+ e.target.style.fontSize = "1.4vw";
+  e.target.style.height = "41%";
+}
+
+const MouseLeaveSize = e => {
+ e.target.style.fontSize = "1.3vw";
+   e.target.style.height = "40%";
+} 
+
+
 React.useEffect(()=>{
 const poolClass = selectedMenuPool >0 ?`?class=${selectedMenuPool}`:''
 fetch(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/pools${poolClass}`)
@@ -43,8 +54,9 @@ return  (
 			<div className={cl.title}>{pool.title}</div>
 			<div className={cl.name}>{pool.name}</div>
 		</div>
-	<div className={cl.poolLink}>
-		<NavLink key={pool.id} to={`/portfolio/${pool.id}`} onClick={()=>setSelectedPool(pool.id)} className={cl.link}>подробнее</NavLink>
+	<div className={cl.poolLink} >
+		<NavLink key={pool.id} to={`/portfolio/${pool.id}`} onMouseEnter={MouseEnterSize} onMouseLeave={MouseLeaveSize}
+		onClick={()=>setSelectedPool(pool.id)} className={cl.link}>подробнее</NavLink>
 	</div>
 	</div>
 	
