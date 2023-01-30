@@ -1,0 +1,31 @@
+.korzina{
+	display: flex;
+	flex-direction: column;
+border: 1px solid #82C9DC;
+margin-top: 3vw;
+}
+.UpKorzina{
+	height: 5vw;
+background: #82C9DC;
+font-family: 'Montserrat';
+font-weight: 500;
+font-size: 1.2vw;
+display: flex;
+flex-direction: row;
+color: #FFFFFF;
+justify-content: space-around;
+align-items: center;
+text-transform: none;
+}
+.zakaz{
+font-family: 'Philosopher';
+cursor: pointer;
+background-color: #82C9DC;
+padding: 1vw 3vw 1vw 3vw;
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+text-transform: uppercase;
+color: #FFFFFF;
+margin-top: 4vw;
+}

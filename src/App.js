@@ -2,6 +2,10 @@ import './App.css';
 import React from "react";
 import Header from "./components/Header/Header";
 import Menu from "./components/Header/Menu";
+import Korzina from "./components/Header/Korzina";
+import RegistrPage from "./components/Auth/RegistrPage";
+import LoginPage from "./components/Auth/LoginPage";
+import MakingOrder from "./components/Header/MakingOrder";
 import Service from "./components/Service/Service";
 import Katalog from "./components/Katalog/Katalog";
 import Detailed from "./components/Portfolio/Detailed";
@@ -16,25 +20,32 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 export const SearchContext = React.createContext('');
+export const TovarContext = React.createContext('');
 
 const App = () =>{
 
 const [search, setSelectedSearch] = React.useState('');
+const [SelectedTovar, setSelectedTovar] = React.useState('');
 
 return (
 
       <BrowserRouter>
   <div className="appWrap">
   <SearchContext.Provider value={{search, setSelectedSearch}}>
+  <TovarContext.Provider value={{SelectedTovar, setSelectedTovar}}>
 
     <Header />
       <div className="appWrapContent">
         <Routes>
         
-        <Route path='' element={ <Main /> } />
+        <Route path='/' element={ <Main /> } />
         <Route path='servis/' element={ <Service /> } />
+        <Route path='account/' element={ <RegistrPage /> } />
+        <Route path='login/' element={ <LoginPage /> } />
+        <Route path='korzina/' element={ <Korzina /> } />
+        <Route path='makingOrder/' element={ <MakingOrder /> } />
         <Route path='katalog/' element={ <Katalog /> } /> 
-        <Route path='katalog/:art' element={ <ProductPage/> } /> 
+        <Route path='katalog/:id' element={ <ProductPage/> } /> 
         <Route path='about/' element={ <About /> } />
         <Route path='сontacts/' element={ <Contacts /> } />
         <Route path='portfolio/' element={ <Portfolio  /> } />
@@ -48,7 +59,8 @@ return (
       </div>
 
     <Lower />
-     </SearchContext.Provider>
+    </TovarContext.Provider>
+    </SearchContext.Provider>
   </div>
 
     </BrowserRouter>  

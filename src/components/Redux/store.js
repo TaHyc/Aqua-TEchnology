@@ -1,15 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit'
 import countTovar from './slices/countTovarSlice'
 import filter from './slices/filterSlice' 
-import stateProfile from './slices/stateProfile'
+import korzina from './slices/korzinaSlice'
+import userSlice from './slices/userSlice'
 
 
 
 export const store = configureStore({
   reducer: {
     count: countTovar,
-    stateProfile,
-    filter
+    filter,
+    korzina,
+    user: userSlice
   },
 })
 

@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios'
 import {useParams} from'react-router-dom';
 import cl from'./Detailed.module.css';
 import p14 from '../assets/14.png'
@@ -22,12 +23,11 @@ console.log()
 
 
 React.useEffect(()=>{
-fetch(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/pools/${id}`)
-.then(res=>res.json()
-).then((arr)=>{
-  setPools(arr)
-  setMainFoto(arr.foto)
-})   
+axios.get(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/pools/${id}`)
+.then((res)=> {
+setPools(res.data)
+setMainFoto(res.data.foto)}
+)
 window.scrollTo(0, 0);
 },[id])
 

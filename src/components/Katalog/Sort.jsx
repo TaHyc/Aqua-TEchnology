@@ -7,6 +7,7 @@ import {setSelectedSort} from '../Redux/slices/filterSlice'
 
 const Sort = () =>{
 
+const sortRef = React.useRef();
 const dispatch = useDispatch()
 const selectedSort = useSelector((state) =>state.filter.selectedSort)
 
@@ -22,10 +23,19 @@ dispatch(setSelectedSort(obj));
 setOpen(false);
 }
 
+React.useEffect(()=>{
+const clickOutside=(event) =>{
+	if(!event.composedPath().includes(sortRef.current))
+		{setOpen(false)}
+}
+document.body.addEventListener('click', clickOutside)
+return()=>document.body.removeEventListener('click', clickOutside)
+}, [])
+
 return(
 	<>
 		<img className={cl.sortFoto} src={sort}/><div className={cl.sort}>
-				<div className={cl.span} onClick={()=>setOpen(!openSort)}>{selectedSort.name}</div>
+				<div className={cl.span} ref={sortRef} onClick={()=>setOpen(!openSort)}>{selectedSort.name}</div>
 			{ openSort && (<div>
 		<ul className={cl.ulKatalog}>
 		{list.map((obj)=>(<li key={obj.name} onClick={()=>onClickListItem(obj)} 

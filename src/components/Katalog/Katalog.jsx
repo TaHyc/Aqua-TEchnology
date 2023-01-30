@@ -1,5 +1,6 @@
 import React from "react";
 import cl from'./Katalog.module.css';
+import axios from 'axios'
 import Product from'./Product';
 import Settings from'./Settings';
 import Sort from'./Sort';
@@ -25,18 +26,16 @@ const [items, setItems] = React.useState([]);
 
 const {search} = React.useContext(SearchContext);
 
-React.useEffect(()=>{
 
+
+React.useEffect(()=>{
 const sortBy = selectedSort.replace('-','')
 const order = selectedSort.includes('-')? 'asc': 'desc'
 const selectedI1 = `&Item1Properti=${selectedMenu}`
 const haven = `&have=${checked}`
 
-fetch(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/items?sortBy=${sortBy}&order=${order}${selectedI1}`)
-.then(res=>res.json()
-).then((arr)=>{
-  setItems(arr)
-})   
+axios.get(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/items?sortBy=${sortBy}&order=${order}${selectedI1}`)
+.then((res)=> setItems(res.data))
 window.scrollTo(0, 0);
 },[selectedSort, selectedMenu, checked])
 

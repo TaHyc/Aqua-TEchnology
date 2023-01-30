@@ -109,7 +109,7 @@ return  (
 	href='https://t.me/AquaTechnology_bot'>заказать проект</a></div>
 
 	</>
-)
+	)
 }
 
 
