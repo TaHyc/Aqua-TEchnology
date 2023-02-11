@@ -4,28 +4,40 @@ import {TovarContext} from "../../App";
 
 const MakingOrder = () =>{
 
+const [buyer, setBuyer] = React.useState(1);
 const [openSearch, setOpenSearch] = React.useState(false);
 
 const {SelectedTovar} = React.useContext(TovarContext);
 
+console.log(buyer)
 
 
 return  (
 	<>
-<div className={cl.main}>
-	<div className={cl.up}>Корзина<buttom className={cl.clear}>Очистить</buttom></div>
-	<div className={cl.korzina}>
-		<div className={cl.UpKorzina}>
-	<text style={{marginRight: '10vw',marginLeft: '5vw'}}>Товар</text>
-	<text>Цена</text>
-	<text>Цена со скидкой</text>
-	<text>Кол-во</text>
-	<text>Сумма</text>
-		</div>ТУТ ТОВАРЫ В КОРЗИНЕ
+<div className={cl.main}>ОФОРМЛЕНИЕ ЗАКАЗА
+	<div className={cl.buy}>Тип покупателя
+		<div className={cl.type}>
+			<label><input type="radio" name="type" value="fisic" onClick={()=>setBuyer(1)}/>Физическое лицо</label>
+        	<label><input type="radio" name="type" value="urist" onClick={()=>setBuyer(2)}/>Юридическое лицо</label>
+		</div>
 	</div>
 
-	<div style={{display: 'flex', flexDirection: 'row', justifyContent: 'end'}}>
-	<buttom className={cl.zakaz}>оформить заказ</buttom></div>
+	<div className={cl.info}>
+		ФИО:
+		<input  className={cl.data}/>
+		E-mail:
+		<input   className={cl.data}/>
+		Телефон:
+		<input    className={cl.data}/>
+		Адрес доставки:
+		<input   className={cl.data} />
+		Комментарий к заказу:
+		<textarea  className={cl.data} />
+		Купок для скидки:
+		<input  className={cl.data}/>
+	
+	</div>
+		
 
 </div>
 
