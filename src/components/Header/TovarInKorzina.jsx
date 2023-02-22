@@ -24,15 +24,15 @@ return  (
 	<div className={cl.foto}><img src={foto} className={cl.fotoTovara}/></div>
 	<div className={cl.title}>{title}</div>
 		</div>
-	<div className={cl.price}>{price}</div>
-	<div className={cl.price}>{price-100}</div>
+	<div className={cl.price}>{price} руб.</div>
+	<div className={cl.price}>{price-100} руб.</div>
 	<div className={cl.buttoms} buttoms>
 					<button className={cl.countButtom} aria-label="Increment value" onClick={OnClickPlus}>+</button>
-        	<span>{count}</span>
+        	<span>{count} шт.</span>
         	<button className={cl.countButtom} aria-label="Decrement value" onClick={count<1?count+1:OnClickMinus}>-</button>
 				</div>
 	
-	<div className={cl.price}>{price*count}</div>
+	<div className={cl.price}>{price*count} руб.</div>
 
 </div>
 

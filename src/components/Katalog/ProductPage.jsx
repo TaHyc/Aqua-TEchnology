@@ -19,7 +19,7 @@ const MouseLeaveSize = e => {
 const {id}=useParams()	
 
 const [shop, setShop] = React.useState([]);
-const [count, setCount] = React.useState(0);
+const [count, setCount] = React.useState(1);
 const [numFyp, setNum] = React.useState(0);
 
 const dispatch = useDispatch()

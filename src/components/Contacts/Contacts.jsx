@@ -1,8 +1,9 @@
 import React from "react";
 import cl from'./Contacts.module.css';
 import {Link} from'react-router-dom';
-import viber from '../assets/viber.png'
-import tg from '../assets/tg.png'
+import viber from '../assets/vib.png'
+import tg from '../assets/teg.png'
+import ws from '../assets/whatS.png'
 import map from '../assets/карта.png'
 import geo from '../assets/гео.png'
 import time from '../assets/time.png'
@@ -22,9 +23,10 @@ return  (
 	<div className={cl.main}>
 		<div className={cl.UpButtoms}>
 	<div className={cl.left}>
-	<div className={cl.header}>мессенджеры<div className={cl.vtw}><a href='https://t.me/AquaTechnology_bot'><img src={viber}/></a>
+	<div className={cl.header}>мессенджеры<div className={cl.vtw}>
+	<a href='https://t.me/AquaTechnology_bot'><img src={viber}/></a>
 	<a href='https://t.me/AquaTechnology_bot'><img src={tg}/></a>
-	<a href='https://t.me/AquaTechnology_bot'><img src={viber}/></a></div></div>
+	<a href='https://t.me/AquaTechnology_bot'><img src={ws}/></a></div></div>
 	<div className={cl.header}>справочная служба<div className={cl.contactPhone}>+375-17-373-39-44</div><div className={cl.contactPhone}>+375-29-312-33-21</div></div>
 	<div className={cl.header}>e-mail<div><a href='https://t.me/AquaTechnology_bot'>info@e-pool.by</a></div></div></div>
 	<div className={cl.riht}><button className={cl.button}><a href='https://t.me/AquaTechnology_bot' onMouseEnter={MouseEnterSize} onMouseLeave={MouseLeaveSize}>задать вопрос</a></button></div>

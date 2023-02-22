@@ -20,7 +20,6 @@ const Main = () =>{
 const MouseMoveSize = e => {
  e.target.style.fontSize = "1.1vw"
 }
-
 const MouseLeaveSize = e => {
  e.target.style.fontSize = "1vw"
 }  
@@ -39,7 +38,7 @@ return  (
 		<div className={cl.mainText}>бассейны “под ключ”</div>
 		<div className={cl.mainMinText}>Компания Aqua Technology проектирует и создаёт бассейны для профессионального спорта и 
 		активного отдыха с 2009 года. Обратившись к нам, вы получите гарантию качества и надёжности по доступным ценам.</div>
-			<div className={cl.elipseG}>
+			<div className={cl.elipseG} onMouseEnter={MouseMoveSize} onMouseLeave={MouseLeaveSize}>
 			<div className={cl.elipseC}>
 				<Link to="/about" className={cl.link} onMouseEnter={MouseMoveSize} onMouseLeave={MouseLeaveSize}>
 				О КОМПАНИИ<img className={cl.arrownRight}src={arrownRight}/></Link>

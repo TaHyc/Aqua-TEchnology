@@ -44,6 +44,14 @@ dispatch(setUser({
 })
 }
 
+const MouseMove = e => {
+ e.target.style.fontSize = "2vw";
+ e.target.style.width = "41%";
+}
+const MouseLeave = e => {
+ e.target.style.fontSize = "1.8vw";
+ e.target.style.width = "40%";
+} 
 return isAuth?(
 	<div className={cl.goodLogin}> 
 	<img src={korzinaLogin}/>
@@ -62,10 +70,11 @@ return isAuth?(
 	</div>
 
 <div className={cl.buttons}>
-	<button className={cl.buttonLogin} onClick={()=>handleLogin(email, password)}>Вход</button>
-	<button className={cl.buttonLogin} style={{background: '#444444'}} onClick={()=>handleRegistr(email, password)}>
-	регистрация
-	</button>
+	<button className={cl.buttonLogin} onMouseEnter={MouseMove} onMouseLeave={MouseLeave}
+	onClick={()=>handleLogin(email, password)}>Вход</button>
+	<button className={cl.buttonLogin} onMouseEnter={MouseMove} onMouseLeave={MouseLeave} 
+	onClick={()=>handleRegistr(email, password)} 
+	style={{background: '#444444'}}>регистрация</button>
 </div>
 
 	</div>

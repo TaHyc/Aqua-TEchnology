@@ -31,23 +31,26 @@ if (tovari.length==0){
 	return isAuth?(<EmptyKorzina/>):(<DontLogin />)
 }
 
+
+
 return  (
 	<>
 <div className={cl.main}>
 	<div className={cl.up}>Корзина<buttom className={cl.clear} onClick={clickClearKorzina}>Очистить</buttom></div>
 	<div className={cl.korzina}>
 		<div className={cl.UpKorzina}>
-	<text style={{width: '28vw', textAlign: 'center'}}>Товар</text>
-	<text>Цена</text>
-	<text>Цена со скидкой</text>
-	<text>Кол-во</text>
-	<text>Сумма</text>
+	<text style={{width: '25vw', textAlign: 'center'}}>Товар</text>
+	<text style={{marginLeft: '11vw'}}>Цена</text>
+	<text style={{marginLeft: '6vw'}}>Цена со скидкой</text>
+	<text style={{marginLeft: '8vw'}}>Кол-во</text>
+	<text style={{marginLeft: '11vw'}}>Сумма</text>
 		</div>	
 		{tovari.map((item)=>(<TovarInKorzina key={item.id} {...item} checkbox={checkbox} setCheckbox={setCheckbox}/>))}
 	</div>
 
-	<div style={{display: 'flex', flexDirection: 'row', justifyContent: 'end'}}>
-	<Link to='/makingOrder' className={cl.zakaz}>оформить заказ</Link></div>
+	<buttom style={{display: 'flex', flexDirection: 'row', justifyContent: 'end'}} >
+		<Link to='/makingOrder' className={cl.zakaz}>оформить заказ</Link>
+	</buttom>
 
 </div>
 
