@@ -7,12 +7,12 @@ import {Link} from'react-router-dom';
 import {TovarContext} from "../../App";
 import {addItems, removeItems, clearItems} from '../Redux/slices/korzinaSlice';
 import {useSelector, useDispatch} from 'react-redux'
-import {increment, decrement} from '../Redux/slices/countTovarSlice'
 import {useAuth} from '../Redux/useAuth'
 
 const Korzina = () =>{
 
 const {isAuth, email}=useAuth()	
+
 
 const dispatch = useDispatch()
 const tovari = useSelector((state)=>state.korzina.items)
@@ -21,6 +21,7 @@ const [openSearch, setOpenSearch] = React.useState(false);
 const [checkbox, setCheckbox] = React.useState(false);
 
 const {SelectedTovar} = React.useContext(TovarContext);
+console.log(checkbox)
 
 const clickClearKorzina=()=>{
 if (window.confirm("Вы уверены что хотите очистить корзину?"))dispatch(clearItems())

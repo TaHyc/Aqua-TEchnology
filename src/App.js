@@ -3,7 +3,6 @@ import React from "react";
 import Header from "./components/Header/Header";
 import Menu from "./components/Header/Menu";
 import Korzina from "./components/Header/Korzina";
-import RegistrPage from "./components/Auth/RegistrPage";
 import LoginPage from "./components/Auth/LoginPage";
 import MakingOrder from "./components/Header/MakingOrder";
 import Service from "./components/Service/Service";
@@ -40,7 +39,6 @@ return (
         
         <Route path='/' element={ <Main /> } />
         <Route path='servis/' element={ <Service /> } />
-        <Route path='account/' element={ <RegistrPage /> } />
         <Route path='login/' element={ <LoginPage /> } />
         <Route path='korzina/' element={ <Korzina /> } />
         <Route path='makingOrder/' element={ <MakingOrder /> } />

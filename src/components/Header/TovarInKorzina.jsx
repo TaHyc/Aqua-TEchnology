@@ -1,7 +1,6 @@
 import React from "react";
 import cl from'./TovarInKorzina.module.css';
 import {useDispatch} from 'react-redux'
-import {increment, decrement} from '../Redux/slices/countTovarSlice'
 import {addItems, minusItem} from '../Redux/slices/korzinaSlice'
 
 
@@ -9,17 +8,13 @@ const TovarInKorzina = ({id, price, foto, title, count}) =>{
 
 const dispatch = useDispatch()
 
-
-
 const OnClickPlus=()=>{
 	dispatch(addItems({id}))
 }
 
 const OnClickMinus=()=>{
-	dispatch(
-		minusItem(
-			id)
-)}	
+	dispatch(minusItem(id))
+}
 
 return  (
 	<>
@@ -34,7 +29,7 @@ return  (
 	<div className={cl.buttoms} buttoms>
 					<button className={cl.countButtom} aria-label="Increment value" onClick={OnClickPlus}>+</button>
         	<span>{count}</span>
-        	<button className={cl.countButtom} aria-label="Decrement value" onClick={OnClickMinus}>-</button>
+        	<button className={cl.countButtom} aria-label="Decrement value" onClick={count<1?count+1:OnClickMinus}>-</button>
 				</div>
 	
 	<div className={cl.price}>{price*count}</div>

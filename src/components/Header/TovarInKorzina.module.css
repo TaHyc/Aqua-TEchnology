@@ -60,7 +60,7 @@ align-items: center;
 .buttoms{
 	display: flex;
 	flex-direction: row;
-	width: 20%;
+
 }
 .empty{
 	display: flex;

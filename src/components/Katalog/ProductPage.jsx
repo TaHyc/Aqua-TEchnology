@@ -4,7 +4,6 @@ import axios from 'axios'
 import {Link, useParams} from'react-router-dom';
 import {TovarContext} from "../../App";
 import {useSelector, useDispatch} from 'react-redux'
-import {increment, decrement} from '../Redux/slices/countTovarSlice'
 import {addItems} from '../Redux/slices/korzinaSlice'
 
 const ProductPage = () =>{
@@ -20,9 +19,9 @@ const MouseLeaveSize = e => {
 const {id}=useParams()	
 
 const [shop, setShop] = React.useState([]);
+const [count, setCount] = React.useState(0);
 const [numFyp, setNum] = React.useState(0);
 
-const count = useSelector((state) => state.count.value)
 const dispatch = useDispatch()
 
 useEffect(()=>{
@@ -57,9 +56,9 @@ return (
 				Колличество
 				<div className={cl.buttomsAll}>
 				<div className={cl.buttoms} buttoms>
-					<button className={cl.countButtom} aria-label="Increment value" onClick={() => dispatch(increment())}>+</button>
+					<button className={cl.countButtom} aria-label="Increment value" onClick={() => setCount(count+1)}>+</button>
         	<span>{count}</span>
-        	<button className={cl.countButtom} aria-label="Decrement value" onClick={() => dispatch(decrement())}>-</button>
+        	<button className={cl.countButtom} aria-label="Decrement value" onClick={() =>count<1?count+1:setCount(count-1)}>-</button>
 				</div>
 		<div className={cl.buy} onClick={onClickKorzina} onMouseEnter={MouseEnterSize} onMouseLeave={MouseLeaveSize}>В корзину</div>
 				</div>

@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit'
-import countTovar from './slices/countTovarSlice'
 import filter from './slices/filterSlice' 
 import korzina from './slices/korzinaSlice'
 import userSlice from './slices/userSlice'
@@ -8,7 +7,6 @@ import userSlice from './slices/userSlice'
 
 export const store = configureStore({
   reducer: {
-    count: countTovar,
     filter,
     korzina,
     user: userSlice
