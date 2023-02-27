@@ -27,6 +27,7 @@ color: #444444;
 text-transform: none;
 width: 95%;
 margin-bottom: 4vw;
+position: relative;
 }
 .left{
 font-family: 'Philosopher';
@@ -45,12 +46,15 @@ color: #444444;
 }
 .buildUl li{
 font-family: 'Montserrat';
-margin-top: 3vw;
 font-size: 1.2vw;
 line-height: 1.8;
 color: #444444;
 text-transform: none;
-
+}
+.absol{
+	width: 80vw;
+	margin-top: 2vw;
+	position: absolute;
 }
 .min{
 	font-family: 'Montserrat';
@@ -61,78 +65,65 @@ line-height: 1.8;
 color: #444444;
 text-transform: none;
 }
-.Punkts{
+.end{
+display: flex;
+flex-direction: row;
+background-color: #82C9DC;
+margin-top: 15vw;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 300;
+line-height: 1.5;
+font-size: 1.3vw;
+color: #FFFFFF;
+text-transform: none;
+}
+.endTitle{
+font-family: 'Philosopher';
+font-weight: 400;
+font-size: 2.5vw;
+text-transform: uppercase;
+color: #FFFFFF;
+}
+.endText{
+padding: 4vw 4vw 3vw 5vw;
+box-sizing: border-box;
+}
+.endLeft{
+padding-inline-start: 1vw;
+}
+.endFoto{
+  width: 50%;
+}
+.ulGor{
 	display: flex;
 	flex-direction: row;
 }
-
-.proecting2{
-	position: absolute;
-	margin-top: -5vw;
-	margin-left: -5vw;
-	width: 35vw;
-	height: 35vw;
+.tipical{
+margin: 5vw 5vw 0 5vw;
+display: flex;
+flex-direction: row;
+display: flex;
+align-items: center;
 }
-.proecting22{
-	width: 20vw;
+.tipikalFoto{
+	border-radius: 50%;
 	height: 20vw;
-	margin-left: 12vw;
-	margin-top: 30vw;
 }
-.proecting23{
-	width: 13vw;
-	height: 13vw;
-	margin-left: 5vw;
-}
-.punktsText{
-	margin: 5vw 2vw 0 2vw;
-}
-.TextTitle{
-	font-family: 'Philosopher';
+.tipTitle{
+	margin-left: 6vw;
+font-family: 'Philosopher';
 font-style: normal;
-font-weight: 400;
-font-size: 2vw;
+font-weight: 500;
+font-size: 2.5vw;
 text-transform: uppercase;
 color: #444444;
 }
-.TextP{
-	margin: 2vw 0 3vw 2vw;
-	font-family: 'Montserrat';
-font-style: normal;
+.tipP{
+margin-top: 4vw;
+font-family: 'Montserrat';
+font-size: 1.3vw;
 font-weight: 400;
-font-size: 1.2vw;
-line-height: 1.8;
+line-height: 1.5;
 text-transform: none;
-color: #444444;
-}
-.Down{
-	margin: 2vw 0 0 5vw;
-	display: flex;
-	flex-direction: row;
-	overflow: hidden;
-}
-.proectin31{
-	width: 15vw;
-	height: 15vw;
-	border-radius: 50%;
-	position: absolute;
-	margin-left: 2vw;
-}
-.TextUl{
-	margin: 2vw 0 3vw 0;
-	font-family: 'Montserrat';
-font-style: normal;
-font-weight: 400;
-font-size: 1.2vw;
-line-height: 1.8;
-text-transform: none;
-color: #444444;
-}
-.proectin32{
-	margin-top: 15vw;
-		border-radius: 50%;
-	height: 35vw; 
-	width: 35vw;	
-	margin-right: -12vw;
-	position: static;
 }
