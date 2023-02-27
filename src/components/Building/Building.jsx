@@ -7,6 +7,7 @@ import spa from'../assets/spa.png';
 import beton from'../assets/beton.png';
 import kompoz from'../assets/kompoz.png';
 import plen from'../assets/plen.png';
+import konec from'../assets/konec.png';
 import leftEnd from'../assets/виды.png';
 
 const Building = () =>{
@@ -120,6 +121,25 @@ return(
 	 Гидромассаж струйками воды оказывает лечебный эффект, что немаловажно для каждого современного человека.</p>
 	</div>
 </div>
+
+
+
+
+<div className={cl.konec}>
+		<div className={cl.konecText}>
+		<div className={cl.konecTitle}>преимущества строительства бассейнов “под-ключ”</div>
+<p className={cl.konecP}>Воспользовавшись услугой строительства бассейна "под ключ" от компании АКВА ТЕХНОЛОДЖИ, вы 
+сэкономите свое время и деньги и получите:</p>
+<ul>
+<li>отличный результат в короткие сроки;</li>
+<li>долгосрочные гарантии, прописанные в договоре;</li>
+<li>безупречный проект от профессионалов.</li>
+</ul>
+Чтобы узнать, сколько стоит построить бассейн, обращайтесь к нашим менеджерам.
+Они рассчитают точную стоимость и проконсультируют вас совершенно бесплатно.
+</div><img className={cl.konecFoto}src={konec}/>
+	</div>
+
 
 
 
