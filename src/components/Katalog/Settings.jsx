@@ -44,7 +44,6 @@ return(
 
 <div className={cl.MenuBottoms}>
 <bottom className={cl.bottomMenu} onClick={ClickReset}>Сбросить</bottom>
-<bottom className={cl.bottomMenu} onClick={ClickApply}>Применить</bottom>
 </div>
 
 </div>)}</div>
