@@ -11,17 +11,31 @@ import radon from '../assets/Radon.png'
 import close from '../assets/close.png'
 import p3 from '../assets/p3.png'
 import pepa from '../assets/свин.png'
+import kochel from '../assets/кошелек.png'
+import face from '../assets/face.png'
+import fura from '../assets/фура.png'
+import Modal from './Modal'
+
+
 
  
 const Main = () =>{
+
+const [modalActive, setModalActive]=React.useState(false)
  
 //window.scrollTo(0, 0)
 
 const MouseMoveSize = e => {
  e.target.style.fontSize = "1.1vw"
+ e.target.style.width = "17vw"
+ e.target.style.height = "7vw"
+ 
 }
 const MouseLeaveSize = e => {
  e.target.style.fontSize = "1vw"
+ e.target.style.width = "15vw"
+ e.target.style.height = "6vw"
+
 }  
 const MouseMoveSizeZakaz = e => {
  e.target.style.fontSize = "1.5vw"
@@ -33,6 +47,7 @@ const MouseLeaveSizeZakaz = e => {
 
 return  (
 	<>
+	<Modal active={modalActive} setActive={setModalActive}/>
 	<div className={cl.mainDiv}>
 		<div className={cl.left}>
 		<div className={cl.mainText}>бассейны “под ключ”</div>
@@ -40,7 +55,7 @@ return  (
 		активного отдыха с 2009 года. Обратившись к нам, вы получите гарантию качества и надёжности по доступным ценам.</div>
 			<div className={cl.elipseG} onMouseEnter={MouseMoveSize} onMouseLeave={MouseLeaveSize}>
 			<div className={cl.elipseC}>
-				<Link to="/about" className={cl.link} onMouseEnter={MouseMoveSize} onMouseLeave={MouseLeaveSize}>
+				<Link to="/about" className={cl.link} >
 				О КОМПАНИИ<img className={cl.arrownRight}src={arrownRight}/></Link>
 			</div>
 			</div>
@@ -65,17 +80,24 @@ return  (
       <h1 className={cl.blueMainText}>Почему выбирают нас?</h1>
 		
 <div className={cl.blueDivText}>
-	<div className={cl.blueTextColumn}>Первый импортёр в беларуси
+	<div className={cl.blueTextColumn}>
+		<div className={cl.gorizont} style={{marginLeft: '-4.5vw'}}>
+		<img className={cl.icon}src={fura} />Первый импортёр в беларуси</div>
 	<div className={cl.blueText}>На сайте представлено более 3000 наименований товаров, необходимых для успешного строительства и функционирования бассейнов, саун, прудов.
 </div>
-	более 100 закрытых гос.проектов
+
+	<div className={cl.gorizont}>
+	<img className={cl.icon}src={kochel}/>более 100 закрытых гос.проектов</div>
 	<div className={cl.blueText}>Мы специализируемся на проектировании и строительстве общественных бассейнов и СПА-центров. На счету компании более 100 завершенных государственных объектов.
 </div>
 	</div>
 
-	<div className={cl.blueTextColumn}>выгодно
+	<div className={cl.blueTextColumn}>
+	<div className={cl.gorizont}>
+	<img className={cl.icon}src={pepa}/>выгодно</div>
 	<div className={cl.blueText}>Предлагаем экономически выгодные решения, систему бонусов и скидок для постоянных клиентов.</div>
-	опыт работы более 10 лет
+	<div className={cl.gorizont}>
+	<img className={cl.icon}src={face}/>опыт работы более 10 лет</div>
 	<div className={cl.blueText}>Мы уверены в качестве предоставляемых нами услуг и готовы браться за самые сложные проекты.
 </div>
 	</div>
@@ -104,8 +126,9 @@ return  (
 	<div  style={{fontWeight: 'bolder',fontSize: '1.5vw', textTransform: 'uppercase'}}>
 	расчёт стоимости</div>
 	Заполните форму заявки, введите исходные данные, и наши специалисты свяжутся с Вами в кратчайшие сроки.</div>
-	<a className={cl.button} onMouseEnter={MouseMoveSizeZakaz} onMouseLeave={MouseLeaveSizeZakaz}
-	href='https://t.me/AquaTechnology_bot'>заказать проект</a></div>
+	<div className={cl.button} onMouseEnter={MouseMoveSizeZakaz} onMouseLeave={MouseLeaveSizeZakaz}
+	onClick={()=>setModalActive(true)}>заказать проект</div></div>
+
 
 	</>
 	)

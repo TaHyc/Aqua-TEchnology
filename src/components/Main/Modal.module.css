@@ -1,0 +1,48 @@
+.title{
+	margin-top: 3vw;
+	display: flex;
+justify-content: center;
+font-family: 'Philosopher';
+font-style: normal;
+font-weight: 400;
+font-size: 2.4vw;
+text-transform: uppercase;
+color: #444444;
+}
+.data{
+	margin-top: 1.5vw;
+border: 1px solid #D9D9D9;
+padding-left: 0.5vw;
+color:#444444;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1vw;
+line-height: 2;
+text-transform: none;
+resize: none;
+}
+.info{
+margin: 4vw 5vw 4vw 5vw;
+display: flex;
+flex-direction: column;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 1.4vw;
+line-height: 2;
+text-transform: none;
+color: #444444;
+}
+.chek{
+	margin-top: 2vw;
+	display: flex;
+	flex-direction: column;
+}
+.chek >*{
+font-style: normal;
+font-weight: 400;
+font-size: 1.2vw;
+line-height: 2;
+text-transform: none;
+}

@@ -119,7 +119,7 @@ if(buyer==1){
 	<div className={cl.buy}>Тип покупателя
 		<div className={cl.type}>
 			<label><input type="radio" name="type" value="fisic" onClick={()=>setBuyer(1)} defaultChecked/>Физическое лицо</label>
-        	<label><input type="radio" name="type" value="urist" onClick={()=>setBuyer(2)} />Юридическое лицо</label>
+      <label><input type="radio" name="type" value="urist" onClick={()=>setBuyer(2)} />Юридическое лицо</label>
 		</div>
 	</div>
 

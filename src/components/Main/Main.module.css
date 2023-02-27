@@ -24,7 +24,7 @@ width: 85%;
 
 }
 .elipseG{
-box-sizing: border-box;
+position: relative;
 width: 15vw;
 height: 6vw;
 border-radius: 50%;
@@ -34,7 +34,7 @@ margin: 5vw 0 0 25vw;
 }
 
 .elipseC{
-box-sizing: border-box;
+position: absolute;
 width: 100%;
 height: 100%;
 border-radius: 50%;
@@ -75,7 +75,16 @@ animation: left 2s 1;
 	animation: right 2s 1;
 	overflow: hidden;
 }
-
+.icon{
+	margin-top: -1vw;
+	height: 2.5vw;
+	margin-right: 0.5vw;
+}
+.gorizont{
+	display: flex;
+	flex-direction: row;
+	margin-left: -3.7vw;
+}
 @keyframes right{
 	0%{
 	opacity: 0;
