@@ -101,7 +101,7 @@ return  (
 	<div className={cl.blueText}>Мы уверены в качестве предоставляемых нами услуг и готовы браться за самые сложные проекты.
 </div>
 	</div>
-		<div className={cl.divBlueFoto}><img className={cl.blueFoto}src={blueFoto}/></div>
+		<div className={cl.divBlueFoto}><img style={{borderRadius: '50%'}}src={blueFoto}/></div>
 </div>
 	
 	</div>
