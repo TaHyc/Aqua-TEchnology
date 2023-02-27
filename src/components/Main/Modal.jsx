@@ -1,12 +1,14 @@
 import React from 'react';
 import "./Modal.css"
 import cl from "./Modal.module.css"
+import cross from '../assets/close_icon.svg'
 
 const Modal = ({active, setActive})=>{
 
 return (
 <div onClick={()=>setActive(false)} className={active? 'modal active': 'modal'}>
 	<div className='modalContent' onClick={e=>e.stopPropagation()}>
+	<img  className={cl.cross} onClick={()=>setActive(false)}src={cross}/>
 	<div className={cl.title}>Расчёт стоимости бассейна</div>
 	<div className={cl.info}>
 		<input placeholder='Контактное лицо' className={cl.data}/>
