@@ -3,8 +3,9 @@
 	border-radius: 5px;
 	animation: openSearch 1s 1;
 	font-size: 0.9vw;
-	padding: 0;
+	padding: 10px 20px 10px 20px;
 font-family: 'Montserrat';
+outline:none;
 }
 @keyframes openSearch{
 	0%{

@@ -3,8 +3,7 @@ import cl from'./Katalog.module.css';
 import set from '../assets/настройка.png'
 
 
-const Settings = ({ value, onClickSetChecked, search1, search2, search3, search4, search5, setSearch3,
-setSearch1, setSearch2, setSearch4, setSearch5}) =>{
+const Settings = (props) =>{
 
 const [openSettings, setOpenSettings] = React.useState(false);
 
@@ -12,16 +11,30 @@ const onClickSettings = (e)=>{
 setOpenSettings(e);
 }
 
-const ClickApply = ()=>{
-onClickSetChecked(true)
-console.log('Нажата кнопка Применить')
+const ClickReset = (e)=>{
+props.onClickSetChecked(false)
+props.setSearch1(false)
+props.setSearch2(false)
+props.setSearch3(false)
+props.setSearch4(false)
+props.setSearch5(false)
+props.poiski.length=0;
 }
 
-const ClickReset = ()=>{
-onClickSetChecked(false)
-setSearch3(false)
-console.log('Нажата кнопка Сбросить')
+
+function contains(brand, e) {
+let myIndex = props.poiski.indexOf(brand);
+if(e.target.value=true){
+	if(props.poiski.length==0){
+	props.setPoiski([...props.poiski,brand])
+    }
+    else{
+    	props.poiski.includes(brand)?console.log('не добавляем:', brand):props.setPoiski([...props.poiski,brand])
+   	}
+if (myIndex !== -1) {
+    props.poiski.splice(myIndex, 1);
 }
+}}
 
 return(
 	<>
@@ -31,19 +44,29 @@ return(
 <span>В наличии</span>
 			
 <form className={cl.formMenu} >
-<input type="radio" onClick={()=>onClickSetChecked(!value)} checked={value}/> в наличии
+<input type="radio" onClick={()=>props.onClickSetChecked(!props.value)} checked={props.value}/> в наличии
 </form>
 			Бренд
 <div className={cl.brends}>
-<div className={cl.choiseBrend}><input  type="checkbox" onClick={()=>onClickSetChecked(!value)} />ariona pools</div>
-<div className={cl.choiseBrend}><input  type="checkbox" onClick={()=>onClickSetChecked(!value)}/>dryden aqua</div>
-<div className={cl.choiseBrend}><input  type="checkbox" onClick={()=>setSearch3(!search3)} checked={search3}/>Emaux</div>
-<div className={cl.choiseBrend}><input  type="checkbox" onClick={()=>onClickSetChecked(!value)} />Merkury</div>
-<div className={cl.choiseBrend}><input  type="checkbox" onClick={()=>onClickSetChecked(!value)} />Pentair water</div>
+<div className={cl.choiseBrend}>
+<input  type="checkbox" checked={props.search1} value={props.search1}
+onClick={(e)=>{contains('ARIONA POOLS',e);props.setSearch1(!props.search1)}}/>ariona pools</div>
+<div className={cl.choiseBrend}>
+<input  type="checkbox" checked={props.search2} value={props.search2}
+onClick={(e)=>{contains('DRYDEN AQUA',e);props.setSearch2(!props.search2)}}/>dryden aqua</div>
+<div className={cl.choiseBrend}>
+<input  type="checkbox" checked={props.search3} value={props.search3}
+onClick={(e)=>{contains('EMAUX',e);props.setSearch3(!props.search3)}}/>Emaux</div>
+<div className={cl.choiseBrend}>
+<input  type="checkbox" checked={props.search4} value={props.search4}
+onClick={(e)=>{contains('MERKURY',e);props.setSearch4(!props.search4)}}/>Merkury</div>
+<div className={cl.choiseBrend}>
+<input  type="checkbox" checked={props.search5} value={props.search5}
+onClick={(e)=>{contains('PENTAIR WATER', e);props.setSearch5(!props.search5)}} />Pentair water</div>
 </div>
 
 <div className={cl.MenuBottoms}>
-<bottom className={cl.bottomMenu} onClick={ClickReset}>Сбросить</bottom>
+<button className={cl.bottomMenu} onClick={ClickReset}>Сбросить</button>
 </div>
 
 </div>)}</div>

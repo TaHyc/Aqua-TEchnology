@@ -18,29 +18,26 @@ const Katalog = () =>{
 
 const dispatch = useDispatch()
 
+const oneClickSetMenu=(i)=>{
+	dispatch(setSelectedMenu(i))
+}
+
 const selectedMenu = useSelector((state) =>state.filter.selectedMenu)
 const selectedSort = useSelector((state) =>state.filter.selectedSort.sortProperti)
 
-const [checked, setChecked] = React.useState(true);
-const [search1, setSearch1] = React.useState(true);
-const [search2, setSearch2] = React.useState(true);
+const [search1, setSearch1] = React.useState(false);
+const [search2, setSearch2] = React.useState(false);
 const [search3, setSearch3] = React.useState(false);
-const [search4, setSearch4] = React.useState(true);
-const [search5, setSearch5] = React.useState(true);
+const [search4, setSearch4] = React.useState(false);
+const [search5, setSearch5] = React.useState(false);
+const [checked, setChecked] = React.useState(true);
 const [items, setItems] = React.useState([]);
-
+const [poiski, setPoiski] = React.useState([]);
 
 const {search} = React.useContext(SearchContext);
 
-var nal=null;
-if(checked==true){nal=1}
-else nal=0
-
-var emaux=null;
-if(search3==true){emaux='EMAUX'}
-else emaux=''
-console.log(emaux)
-
+let nal=null;
+checked?nal=1:nal=0
 
 React.useEffect(()=>{
 const sortBy = selectedSort.replace('-','')
@@ -51,18 +48,6 @@ axios.get(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/items?sortBy=${sortBy}&or
 .then((res)=> setItems(res.data))
 window.scrollTo(0, 0);
 },[selectedSort, selectedMenu])
-
-const oneClickSetMenu=(i)=>{
-	dispatch(setSelectedMenu(i))
-}
-
-const AllProducts = items.filter(item=>item.title.toLowerCase().includes(search.toLowerCase())).
-filter(item=>item.have==nal).
-filter(item=>item.title.includes(emaux)).
-map(
-	item=><Product  key={item.id} all={item}/>
-	) 
-
 
 return  (
 <div className={cl.main}>
@@ -78,24 +63,14 @@ return  (
 
 	<div className={cl.rigth}>
 		<div className={cl.sortAll}>
-		
 		<Sort/>
-		<Settings value={checked}
-		search1={search1}
-		search2={search2}
-		search3={search3}
-		search4={search4}
-		search5={search5}
-		setSearch1={setSearch1}
-		setSearch2={setSearch2}
-		setSearch3={setSearch3}
-		setSearch4={setSearch4}
-		setSearch5={setSearch5}
-		 onClickSetChecked={(i)=>setChecked(i)} />
-
+		<Settings value={checked} items={items}	poiski={poiski}	setPoiski={setPoiski}onClickSetChecked={(i)=>setChecked(i)} 
+		search1={search1} search2={search2} search3={search3} search4={search4} search5={search5}
+		setSearch1={setSearch1} setSearch2={setSearch2}setSearch3={setSearch3}setSearch4={setSearch4}setSearch5={setSearch5}/>
 		</div>
 	<div className={cl.katalogItems}>
-		{AllProducts}
+		{items.filter(item=>poiski.length==0?true:poiski.some(str=>str.includes(item.brand))).filter(item=>item.title.toLowerCase().includes(search.toLowerCase())).
+filter(item=>item.have==nal).map(item=><Product  key={item.id} all={item}/>) }
 		</div>
 	</div>
 </div>
