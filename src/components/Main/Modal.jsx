@@ -62,8 +62,15 @@ return (
 <div><input  type="checkbox"  />разделительные дорожки</div>
 <div><input  type="checkbox"  />стартовые тумбы</div>
 </div>
+<textarea className={cl.data} placeholder='Откуда вы узнали о нас?'/>
+<textarea className={cl.data} style={{paddingTop:'1vw', marginBottom: '3vw'}}
+ placeholder='Дополнительная информация и комментарии'/>
+<a href="https://t.me/AquaTechnology_bot" className={cl.link}>Заказать расчёт</a>
+
 	</div>
+
 	</div>
+
 </div>
 )
 }

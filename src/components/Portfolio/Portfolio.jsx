@@ -8,6 +8,7 @@ const Portfolio = (selectedPool, setSelectedPool) =>{
 	
 const [selectedMenuPool, setSelectedMenuPool] = React.useState([]);	
 const [pools, setPools] = React.useState([]);
+window.scrollTo(0, 0);
 
 const menuId = [
 'все проекты',

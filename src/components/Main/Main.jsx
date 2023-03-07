@@ -15,35 +15,11 @@ import kochel from '../assets/кошелек.png'
 import face from '../assets/face.png'
 import fura from '../assets/фура.png'
 import Modal from './Modal'
-
-
-
  
 const Main = () =>{
 
 const [modalActive, setModalActive]=React.useState(false)
- 
-//window.scrollTo(0, 0)
-
-const MouseMoveSize = e => {
- e.target.style.fontSize = "1.1vw"
- e.target.style.width = "17vw"
- e.target.style.height = "7vw"
- 
-}
-const MouseLeaveSize = e => {
- e.target.style.fontSize = "1vw"
- e.target.style.width = "15vw"
- e.target.style.height = "6vw"
-
-}  
-const MouseMoveSizeZakaz = e => {
- e.target.style.fontSize = "1.5vw"
-}
-
-const MouseLeaveSizeZakaz = e => {
- e.target.style.fontSize = "1.4vw"
-}  
+ window.scrollTo(0, 0)
 
 return  (
 	<>
@@ -53,10 +29,9 @@ return  (
 		<div className={cl.mainText}>бассейны “под ключ”</div>
 		<div className={cl.mainMinText}>Компания Aqua Technology проектирует и создаёт бассейны для профессионального спорта и 
 		активного отдыха с 2009 года. Обратившись к нам, вы получите гарантию качества и надёжности по доступным ценам.</div>
-			<div className={cl.elipseG} onMouseEnter={MouseMoveSize} onMouseLeave={MouseLeaveSize}>
+			<div className={cl.elipseG}>
 			<div className={cl.elipseC}>
-				<Link to="/about" className={cl.link} >
-				О КОМПАНИИ<img className={cl.arrownRight}src={arrownRight}/></Link>
+				<Link to="/about" style={{color: '#444444'}}>О КОМПАНИИ<img className={cl.arrownRight}src={arrownRight}/></Link>
 			</div>
 			</div>
 		</div>
@@ -101,7 +76,7 @@ return  (
 	<div className={cl.blueText}>Мы уверены в качестве предоставляемых нами услуг и готовы браться за самые сложные проекты.
 </div>
 	</div>
-		<div className={cl.divBlueFoto}><img style={{borderRadius: '50%'}}src={blueFoto}/></div>
+	<img className={cl.BlueFoto}src={blueFoto}/>
 </div>
 	
 	</div>
@@ -115,20 +90,21 @@ return  (
 		<div className={cl.p}><img className={cl.pFoto} src={p3}/><div className={cl.p5Main}>частные бассейны</div><div className={cl.p5text}>Бассейн на участке</div></div>
 		<div className={cl.p}><img className={cl.pFoto} src={close}/><div className={cl.p5Main}>частные бассейны</div><div className={cl.p5text}>Частный закрытый бассейн</div></div>
 	</div>
- <div className={cl.elipseGD}>
-			<div className={cl.elipseCD}>
-	<Link to="/portfolio" className={cl.link} onMouseEnter={MouseMoveSize} onMouseLeave={MouseLeaveSize}>СМОТРЕТЬ БОЛЬШЕ</Link>
-			</div>
+
+	<div className={cl.elipseG} style={{margin:'auto', color: '#444444'}}>
+		<div className={cl.elipseC}>
+			<Link to="/portfolio" style={{color: '#444444'}}>СМОТРЕТЬ БОЛЬШЕ</Link>
 		</div>
+	</div>
+
 </div>
 
 	<div className={cl.request}><div style={{fontSize: '1.2vw', textTransform: 'none', width: '67%'}}>
 	<div  style={{fontWeight: 'bolder',fontSize: '1.5vw', textTransform: 'uppercase'}}>
 	расчёт стоимости</div>
 	Заполните форму заявки, введите исходные данные, и наши специалисты свяжутся с Вами в кратчайшие сроки.</div>
-	<div className={cl.button} onMouseEnter={MouseMoveSizeZakaz} onMouseLeave={MouseLeaveSizeZakaz}
-	onClick={()=>setModalActive(true)}>заказать проект</div></div>
-
+	<div className={cl.button}onClick={()=>setModalActive(true)}>заказать проект</div></div>
+	
 
 	</>
 	)

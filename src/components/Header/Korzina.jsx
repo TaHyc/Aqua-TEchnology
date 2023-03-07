@@ -13,7 +13,6 @@ const Korzina = () =>{
 
 const {isAuth, email}=useAuth()	
 
-
 const dispatch = useDispatch()
 const tovari = useSelector((state)=>state.korzina.items)
 
@@ -21,7 +20,6 @@ const [openSearch, setOpenSearch] = React.useState(false);
 const [checkbox, setCheckbox] = React.useState(false);
 
 const {SelectedTovar} = React.useContext(TovarContext);
-console.log(checkbox)
 
 const clickClearKorzina=()=>{
 if (window.confirm("Вы уверены что хотите очистить корзину?"))dispatch(clearItems())
@@ -30,8 +28,6 @@ if (window.confirm("Вы уверены что хотите очистить к�
 if (tovari.length==0){
 	return isAuth?(<EmptyKorzina/>):(<DontLogin />)
 }
-
-
 
 return  (
 	<>

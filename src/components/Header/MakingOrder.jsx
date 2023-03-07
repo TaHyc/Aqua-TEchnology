@@ -37,7 +37,6 @@ alert('Ваш заказ принят в обработку.')
 }
 }
 
-
 const validateEmail = (e) => {
   setEmail(e.target.value)
   const re =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -110,8 +109,6 @@ case 'contact':setDirtyContact(true)
 }
 }
 
-//stas.rogal2@gmail.com
-
 
 if(buyer==1){
 	return(<>
@@ -137,7 +134,7 @@ if(buyer==1){
 		{(DirtyAdress && ErrorAdress) && <div style={{color:'red'}}>{ErrorAdress}</div>}
 		<input name='adress' value={adress} onBlur={e=>blurHandler(e)} onChange={e=>validateAdress(e)} className={cl.data} />
 		Комментарий к заказу:
-		<textarea  readOnly className={cl.data} />
+		<textarea className={cl.data} />
 		Купок для скидки:
 		<input  className={cl.data}/>
 	</div>

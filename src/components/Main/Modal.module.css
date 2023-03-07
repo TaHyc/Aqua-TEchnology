@@ -52,3 +52,29 @@ font-size: 1.2vw;
 line-height: 2;
 text-transform: none;
 }
+.link{
+	margin: auto;
+width: 14vw;
+font-family: 'Philosopher';
+font-style: normal;
+font-weight: 400;
+font-size: 1.4vw;
+text-transform: uppercase;
+color: white;
+background-color: #82C9DC;
+padding: 0.8vw 1.5vw 0.8vw 1.5vw;
+text-align: center;
+}
+.data{
+width: 100%;
+border: 1px solid #D9D9D9;
+padding-left: 1vw;
+color:#444444;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1.2vw;
+line-height: 2;
+text-transform: none;
+resize: none;
+}

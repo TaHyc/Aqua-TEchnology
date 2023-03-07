@@ -12,15 +12,13 @@ pointer-events: none;
 transition: 0.5s;
 z-index: 1;
 }
-
 .modal.active {
 opacity: 1;
 pointer-events: all;
 overflow: scroll;
 }
-
 .modalContent {
-height: 150vw;
+height: 172vw;
 width: 50vw;
 background-color: white;
 }

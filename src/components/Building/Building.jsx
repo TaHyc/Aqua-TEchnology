@@ -12,8 +12,7 @@ import leftEnd from'../assets/виды.png';
 
 const Building = () =>{
 
-//stas.rogal2@gmail.com
-//window.scrollTo(0, 0);
+window.scrollTo(0, 0);
 
 return(
 	<>
@@ -69,14 +68,14 @@ return(
 <li>Уличными.</li>
 </ul>
 </div>
-<p style={{marginBlockStart: '0em'}}>В зависимости от используемых материалов и технологий, бассейны могут быть:
+<p style={{marginBlockStart: '0em'}}/>В зависимости от используемых материалов и технологий, бассейны могут быть:
 <ul className={cl.endLeft}>
 <li>Бетонными;</li>
 <li>Пленочными;</li>
 <li>Композитными;</li>
 <li>Гидромассажными СПА.</li>
 </ul>
-</p>
+
 		</div>
 	</div>
 

@@ -19,15 +19,13 @@ const {items}=useSelector(state=>state.korzina)
 
 const totalCount=items.reduce((sum,item)=>sum+item.count, 0)
 
-
-
 return  (
 	<>
 	<div className={cl.header}>
 		<div className={cl.up}>
-			<div className={cl.groupe11}><Link to="korzina"><img className={cl.OneFotoGroupe} src={korzina}/></Link>
-			<Link to="korzina">
-				{items.length > 0 && <div className={cl.countTovar}>{totalCount}</div>}</Link>
+			<div className={cl.groupe11}>
+			<Link to="korzina"><img className={cl.OneFotoGroupe} src={korzina}/></Link>
+			<Link to="korzina">{items.length > 0 && <div className={cl.countTovar}>{totalCount}</div>}</Link>
 			<Link to="login"><img className={cl.OneFotoGroupe} src={account}/></Link>
 			<img onClick={()=>setOpenSearch(!openSearch)} className={cl.OneFotoGroupe}src={sourch}/>
 			{ openSearch && <Search />}</div>

@@ -4,8 +4,8 @@ import {useParams} from'react-router-dom';
 import cl from'./Detailed.module.css';
 import p14 from '../assets/14.png'
 
-
 const Detailed = () =>{
+window.scrollTo(0, 0);
 
 const MouseMoveSizeZakaz = e => {
  e.target.style.fontSize = "1.5vw"
@@ -19,9 +19,6 @@ const {id}=useParams()
 const [pools, setPools] = React.useState([]);
 const [mainFoto, setMainFoto] = React.useState();
 
-console.log()
-
-
 React.useEffect(()=>{
 axios.get(`https://635ffdbb3e8f65f283c0fff9.mockapi.io/pools/${id}`)
 .then((res)=> {
@@ -30,7 +27,6 @@ setMainFoto(res.data.foto)}
 )
 window.scrollTo(0, 0);
 },[id])
-
 
 return  (
 	<>

@@ -9,6 +9,7 @@ import geo from '../assets/гео.png'
 import time from '../assets/time.png'
 
 const Contacts = () =>{
+window.scrollTo(0, 0);
 
 const MouseEnterSize = e => {
  e.target.style.fontSize = "1.7vw";
