@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Aqua-Technology/static/css/main.eccc1a9a.css",
-    "main.js": "/Aqua-Technology/static/js/main.9f0ad4e8.js",
+    "main.css": "/Aqua-Technology/static/css/main.d1970e47.css",
+    "main.js": "/Aqua-Technology/static/js/main.c32300c3.js",
     "static/js/787.46c51462.chunk.js": "/Aqua-Technology/static/js/787.46c51462.chunk.js",
     "static/media/direct.png": "/Aqua-Technology/static/media/direct.9124226998d8b5e32fe0.png",
     "static/media/hystory.png": "/Aqua-Technology/static/media/hystory.6c89943be1b59418d509.png",
@@ -42,12 +42,12 @@
     "static/media/whatS.png": "/Aqua-Technology/static/media/whatS.c0d80f5d62f69b1eb164.png",
     "index.html": "/Aqua-Technology/index.html",
     "static/media/close_icon.svg": "/Aqua-Technology/static/media/close_icon.157fd6e744848852d19a7ec16b8d9b38.svg",
-    "main.eccc1a9a.css.map": "/Aqua-Technology/static/css/main.eccc1a9a.css.map",
-    "main.9f0ad4e8.js.map": "/Aqua-Technology/static/js/main.9f0ad4e8.js.map",
+    "main.d1970e47.css.map": "/Aqua-Technology/static/css/main.d1970e47.css.map",
+    "main.c32300c3.js.map": "/Aqua-Technology/static/js/main.c32300c3.js.map",
     "787.46c51462.chunk.js.map": "/Aqua-Technology/static/js/787.46c51462.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eccc1a9a.css",
-    "static/js/main.9f0ad4e8.js"
+    "static/css/main.d1970e47.css",
+    "static/js/main.c32300c3.js"
   ]
 }
