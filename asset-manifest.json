@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Aqua-Technology/static/css/main.8ccd2c20.css",
-    "main.js": "/Aqua-Technology/static/js/main.73cd12be.js",
+    "main.js": "/Aqua-Technology/static/js/main.c289af2d.js",
     "static/js/787.46c51462.chunk.js": "/Aqua-Technology/static/js/787.46c51462.chunk.js",
     "static/media/direct.png": "/Aqua-Technology/static/media/direct.9124226998d8b5e32fe0.png",
     "static/media/hystory.png": "/Aqua-Technology/static/media/hystory.6c89943be1b59418d509.png",
@@ -43,11 +43,11 @@
     "index.html": "/Aqua-Technology/index.html",
     "static/media/close_icon.svg": "/Aqua-Technology/static/media/close_icon.157fd6e744848852d19a7ec16b8d9b38.svg",
     "main.8ccd2c20.css.map": "/Aqua-Technology/static/css/main.8ccd2c20.css.map",
-    "main.73cd12be.js.map": "/Aqua-Technology/static/js/main.73cd12be.js.map",
+    "main.c289af2d.js.map": "/Aqua-Technology/static/js/main.c289af2d.js.map",
     "787.46c51462.chunk.js.map": "/Aqua-Technology/static/js/787.46c51462.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8ccd2c20.css",
-    "static/js/main.73cd12be.js"
+    "static/js/main.c289af2d.js"
   ]
 }
