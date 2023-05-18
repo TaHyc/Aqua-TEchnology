@@ -1,3 +1,0 @@
-<form name="myForm">
-    <input type="radio" onClick={()=>setChecked(!checked)} checked={checked}/> в наличии
-			</form>

@@ -31,7 +31,6 @@ dispatch(setUser({
 }));
 })
 }
-//stas.rogal2@gmail.com
 
 const handleLogin=(email, password)=>{
 	const auth = getAuth();

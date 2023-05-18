@@ -77,5 +77,4 @@ filter(item=>item.have==nal).map(item=><Product  key={item.id} all={item}/>) }
 );
 }
 
-
 export default Katalog;

@@ -25,12 +25,15 @@ return  (
 		<div className={cl.up}>
 			<div className={cl.groupe11}>
 			<Link to="korzina"><img className={cl.OneFotoGroupe} src={korzina}/></Link>
-			<Link to="korzina">{items.length > 0 && <div className={cl.countTovar}>{totalCount}</div>}</Link>
+			{items.length > 0 && <div className={cl.countTovar}>{totalCount}</div>}
 			<Link to="login"><img className={cl.OneFotoGroupe} src={account}/></Link>
 			<img onClick={()=>setOpenSearch(!openSearch)} className={cl.OneFotoGroupe}src={sourch}/>
 			{ openSearch && <Search />}</div>
-			<Link to=""  className={cl.item}>Aqua Technology</Link>
-			<div className={cl.phone}>+375296630860<br></br>+375292511202</div>
+			<Link to="/Aqua-Technology"  className={cl.logo}>Aqua Technology</Link>
+			<div className={cl.phones}>
+				<a href="tel: +375296630860" className={cl.phone}>+375296630860</a>
+				<a href="tel: +375292511202" className={cl.phone}>+375292511202</a>
+			</div>
 		</div>	
 		<Menu />
 	</div>

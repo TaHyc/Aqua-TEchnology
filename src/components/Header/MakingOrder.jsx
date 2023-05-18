@@ -1,6 +1,6 @@
 import React from "react";
 import cl from'./MakingOrder.module.css';
-import {TovarContext} from "../../App";
+import {Link} from'react-router-dom';
 
 const MakingOrder = () =>{
 
@@ -138,7 +138,9 @@ if(buyer==1){
 		Купок для скидки:
 		<input  className={cl.data}/>
 	</div>
-		<button onClick={()=>validation()} className={cl.zakaz}>оформить заказ</button>
+
+	<Link to='/payment' onClick={()=>validation()} className={cl.zakaz}>оформить заказ</Link>
+
 </div>
 
 	</>)
@@ -182,7 +184,8 @@ else{
 		Купок для скидки:
 		<input  className={cl.data}/>
 	</div>
-	<button onClick={()=>validation()} className={cl.zakaz}>оформить заказ</button>
+	<Link to='/payment' onClick={()=>validation()} className={cl.zakaz}>оформить заказ</Link>:
+
 	</div>
 
 </>	

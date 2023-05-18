@@ -1,8 +1,8 @@
 import './App.css';
 import React from "react";
 import Header from "./components/Header/Header";
-import Menu from "./components/Header/Menu";
 import Korzina from "./components/Header/Korzina";
+import Pay from "./components/Header/Pay";
 import LoginPage from "./components/Auth/LoginPage";
 import MakingOrder from "./components/Header/MakingOrder";
 import Service from "./components/Service/Service";
@@ -37,11 +37,12 @@ return (
       <div className="appWrapContent">
         <Routes>
         
-        <Route path='/' element={ <Main /> } />
+        <Route path='/Aqua-Technology' element={ <Main /> } />
         <Route path='servis/' element={ <Service /> } />
         <Route path='login/' element={ <LoginPage /> } />
         <Route path='korzina/' element={ <Korzina /> } />
         <Route path='makingOrder/' element={ <MakingOrder /> } />
+        <Route path='payment/' element={ <Pay /> } />
         <Route path='katalog/' element={ <Katalog /> } /> 
         <Route path='katalog/:id' element={ <ProductPage/> } /> 
         <Route path='about/' element={ <About /> } />

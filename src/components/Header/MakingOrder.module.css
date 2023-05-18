@@ -71,3 +71,19 @@ color: #FFFFFF;
 margin-top: 4vw;
 border: none;
 }
+.allData{
+	display: flex;
+	flex-direction: row;
+}
+.allNumbs{
+	display: flex;
+	flex-direction: row;
+}
+.numbsColumn{
+	display: flex;
+	flex-direction: column;
+}
+.error{
+	color: red;
+	font-size: 1vw;
+}
