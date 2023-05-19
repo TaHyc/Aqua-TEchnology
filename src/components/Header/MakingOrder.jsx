@@ -8,26 +8,23 @@ const [buyer, setBuyer] = React.useState(1);
 const [email, setEmail] = React.useState('');
 const [name, setName] = React.useState('');
 const [phone, setPhone] = React.useState('');
-const [adress, setAdress] = React.useState('');
 const [contact, setContact] = React.useState('');
 //
 const [ErrorEmail, setErrorEmail] = React.useState('Поле должно быть заполнено!');
 const [ErrorName, setErrorName] = React.useState('Поле должно быть заполнено!');
 const [ErrorPhone, setErrorPhone] = React.useState('Поле должно быть заполнено!');
-const [ErrorAdress, setErrorAdress] = React.useState('Поле должно быть заполнено!');
 const [ErrorContact, setErrorContact] = React.useState('Поле должно быть заполнено!');
 //
 const [DirtyEmail, setDirtyEmail] = React.useState(false);
 const [DirtyName, setDirtyName] = React.useState(false);
 const [DirtyPhone, setDirtyPhone] = React.useState(false);
-const [DirtyAdress, setDirtyAdress] = React.useState(false);
 const [DirtyContact, setDirtyContact] = React.useState(false);
 //
 const [formValid, setFormValid] = React.useState(false)
 
 
 const validation = () => {
-if (ErrorEmail || ErrorName || ErrorPhone|| ErrorAdress) {
+if (ErrorEmail || ErrorName || ErrorPhone) {
 setFormValid(false)
 alert('Заполните необходимые поля.')
 } 
@@ -59,16 +56,7 @@ setErrorPhone('')
 }
 }
 
-const validateAdress= (e) => {
-setAdress(e.target.value)
-const ph=/^[а-я\s.]+?\d+/i;
-if (!ph.test(String(e.target.value))) {
-setErrorAdress('Адрес указан некоректно')
-}
-else {
-setErrorAdress('')
-}
-}
+
 
 const validateName= (e) => {
 setName(e.target.value)
@@ -102,13 +90,15 @@ case 'name':setDirtyName(true)
 	break
 case 'phone':setDirtyPhone(true)
 	break
-case 'adress':setDirtyAdress(true)
-	break
 case 'contact':setDirtyContact(true)
 	break
 }
 }
 
+//function restrictToInteger(e)
+//{
+ // e.target.value = target.value.replace(/[^\d.]/g, '');
+//}
 
 if(buyer==1){
 	return(<>
@@ -131,16 +121,13 @@ if(buyer==1){
 		{(DirtyPhone && ErrorPhone) && <div style={{color:'red'}}>{ErrorPhone}</div>}
 		<input name='phone' value={phone} onBlur={e=>blurHandler(e)} onChange={e=>validatePhone(e)} className={cl.data}/>
 		*Адрес доставки:
-		{(DirtyAdress && ErrorAdress) && <div style={{color:'red'}}>{ErrorAdress}</div>}
-		<input name='adress' value={adress} onBlur={e=>blurHandler(e)} onChange={e=>validateAdress(e)} className={cl.data} />
+		<input name='adress' onBlur={e=>blurHandler(e)} className={cl.data} />
 		Комментарий к заказу:
 		<textarea className={cl.data} />
 		Купок для скидки:
 		<input  className={cl.data}/>
 	</div>
-
 	<Link to='/payment' onClick={()=>validation()} className={cl.zakaz}>оформить заказ</Link>
-
 </div>
 
 	</>)
@@ -177,8 +164,7 @@ else{
 		Факс:
 		<input  className={cl.data}/>
 		*Адрес доставки:
-		{(DirtyAdress && ErrorAdress) && <div style={{color:'red'}}>{ErrorAdress}</div>}
-		<input name='adress' value={adress} onBlur={e=>blurHandler(e)} onChange={e=>validateAdress(e)} className={cl.data} />
+		<input name='adress' onBlur={e=>blurHandler(e)} className={cl.data} />
 		Комментарий к заказу:
 		<textarea  className={cl.data} />
 		Купок для скидки:

@@ -8,7 +8,11 @@ import {
   } from 'creditcard.js';
 
 
-const Pay = () => {
+const PayCopy = () => {
+    if(isValid==true){
+        console.log(isValid)
+        alert('всё гуд')
+    }
 
     const [Numb, setNumb] = React.useState('');
     const [data, setData] = React.useState('');
@@ -30,8 +34,8 @@ const Pay = () => {
     const [formValid, setFormValid] = React.useState(false)
 
     isValid('4916108926268679'); // returns true 4916108926268679
-    isExpirationDateValid('02', '2027'); // returns true 02', '2027
-    isSecurityCodeValid('4556603578296676', '250'); // returns true 4556603578296676', '250
+    isExpirationDateValid('02', data); // returns true 02', '2027
+    isSecurityCodeValid(Numb, cvv); // returns true 4556603578296676', '250
     getCreditCardNameByNumber('4539578763621486'); // returns 'Visa' 4539578763621486
  
 
@@ -138,4 +142,4 @@ const Pay = () => {
 
 
 
-export default Pay;
+export default PayCopy;
