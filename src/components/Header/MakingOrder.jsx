@@ -100,7 +100,7 @@ case 'contact':setDirtyContact(true)
  // e.target.value = target.value.replace(/[^\d.]/g, '');
 //}
 
-if(buyer==1){
+if(buyer===1){
 	return(<>
 <div className={cl.main}>ОФОРМЛЕНИЕ ЗАКАЗА
 	<div className={cl.buy}>Тип покупателя
@@ -170,7 +170,7 @@ else{
 		Купок для скидки:
 		<input  className={cl.data}/>
 	</div>
-	<Link to='/payment' onClick={()=>validation()} className={cl.zakaz}>оформить заказ</Link>:
+	<Link to='/payment' onClick={()=>validation()} className={cl.zakaz}>оформить заказ</Link>
 
 	</div>
 
