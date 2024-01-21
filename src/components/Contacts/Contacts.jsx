@@ -1,6 +1,7 @@
 import React from "react";
 import cl from'./Contacts.module.css';
 import {Link} from'react-router-dom';
+import { YMaps, Map,Placemark,ListBox,ListBoxItem } from '@pbe/react-yandex-maps';
 import viber from '../assets/vib.png'
 import tg from '../assets/teg.png'
 import ws from '../assets/whatS.png'
@@ -34,7 +35,13 @@ return  (
 
 	</div>
 
-	<img style={{width: '100%'}} src={map}/>
+
+	<YMaps > 
+	<Map defaultState={{ center: [53.871047, 27.411830], zoom: 12 }} width="100%" height="400px">
+	<Placemark geometry={[53.871047, 27.411830]}/>
+	<Placemark geometry={[53.871090, 27.382968]}/>
+	</Map>
+  </YMaps>
 
 	<div className={cl.mainT}>Склад ООО “АКВА ТЕХНОЛОДЖИ”,<br></br>
 г. Минск, 1-ый переулок Монтажников, 8/2
